@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:jvignolles/jquery-fileupload-rails.git
+  remote: git://github.com/jvignolles/jquery-fileupload-rails.git
   revision: 4ec122b9fac3ca41529c5b63eb256ad3a48b3678
   specs:
     jquery-fileupload-rails (0.4.1)
@@ -86,9 +86,8 @@ GEM
       activesupport (>= 3.0.4)
     excon (0.41.0)
     execjs (2.2.2)
-    figaro (0.7.0)
-      bundler (~> 1.0)
-      rails (>= 3, < 5)
+    figaro (1.0.0)
+      thor (~> 0.14)
     fog (1.22.1)
       fog-brightbox
       fog-core (~> 1.22)
@@ -282,7 +281,7 @@ DEPENDENCIES
   dynamic_form
   escape_utils
   exception_notification
-  figaro (~> 0.7.0)
+  figaro (~> 1.0.0)
   fog (= 1.22.1)
   geocoder
   haml-rails

@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'therubyracer',  platforms: :ruby
 
 # Application configuration, see config/application.yml
-gem 'figaro', '~> 0.7.0'
+gem 'figaro', '~> 1.0.0'
 
 # Utilities
 gem 'unicode_utils'
