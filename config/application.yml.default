@@ -1,0 +1,72 @@
+defaults: &defaults
+  # Used as directory name, cookie prefix, email object prefix (ie. please: downcase, no whitespace)
+  project_name: "push-up-rails"
+
+  # Intern
+  site_start_year: 2014
+  site_tld: "push-up-rails.dev"
+  mailer_host: "push-up-rails.dev"
+  mailer_port: ~
+  email_contact: "contact@domain.tld"
+  email_supervision: "supervision@domain.tld"
+  production_site: false
+  s3_enabled: true
+  js_upload_enabled: true
+  js_s3_iframe_enabled: false
+  worker_enabled: false
+
+  # Used by configuration seed / migration, or fallback if configuration is not set
+  app_name: "Push Up Rails"
+  company_name: "Push Up Rails Company"
+  address: "Place de l’Hôtel de ville\n75004 Paris, France"
+  phone: "01 23 45 67 89"
+  fax: "01 23 45 67 89"
+
+  # Keys and secrets
+  google_analytics_key:  ~
+  google_analytics_tld:  "domain.tld"
+  mailjet_api_key:       "todo"
+  mailjet_secret_key:    "todo"
+  newrelic_app_name:     "domain.tld"
+  newrelic_license_key:  "todo"
+  # rake secret
+  secret_token:          "todo"
+  # Amazon S3
+  aws_access_key_id:     "todo"
+  aws_secret_access_key: "todo"
+  aws_region:            "eu-central-1"  # EU Frankfurt (Germany)
+  aws_directory:         "todo"
+  # Redis
+  #redis_host:            "todo"
+  #redis_port:            "18851"
+  #redis_password:        "todo"
+
+development:
+  <<: *defaults
+  CUSTOM_RUBY_VERSION: ~
+  cap_server: "domain.tld"
+  cap_repository: "git@github.com:user/push-up-rails.git"
+  s3_enabled: true
+  js_upload_enabled: true
+  js_s3_iframe_enabled: false
+  worker_enabled: false
+
+test:
+  <<: *defaults
+
+# Capistrano @ OVH
+preprod: &preprod
+  production_site: true
+  site_tld: "www.domain.tld"
+  mailer_host: "www.domain.tld"
+
+# Heroku
+prod: &prod
+  production_site: true
+  site_tld: "www.domain.tld"
+  mailer_host: "www.domain.tld"
+  google_analytics_key: "UA-XXXXXXXX-Y"
+
+production:
+  <<: *defaults
+  <<: *prod

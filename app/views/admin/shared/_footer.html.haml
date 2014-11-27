@@ -1,0 +1,5 @@
+- unless @skip_footer
+  #footer.container{class: devise_controller? ? "fixed-bottom" : nil }
+    .row
+      %p.copyright-p © #{copyright_years} #{link_to company_name, front_home_url} · Tous droits réservés
+

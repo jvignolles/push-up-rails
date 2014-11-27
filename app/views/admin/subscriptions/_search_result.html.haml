@@ -1,0 +1,26 @@
+- unless defined?(:deleters)
+  - deleters = false
+- init_class_infos
+- if items.present?
+  - some_item = items.first
+  - has_active = some_item.respond_to?(:active)
+  - has_images = some_item.respond_to?(:images) || some_item.respond_to?(:image)
+  - display_all_images = false
+  %table.listing.table.table-striped.table-hover.parent-lightbox
+    %thead
+      %tr
+        %th E-mail
+        %th.col-sm-1 Créé le
+        - if deleters
+          %th.col-sm-1
+            %abbr{ title: "Supprimer" } Suppr.
+    %tbody
+      - items.each do |item|
+        %tr
+          %td.link= item.email
+          %td.link= format_datetime(item.created_at)
+          - if deleters
+            %td.buttons-group
+              .btn-group
+                = delete_link send("#{@__namespaces_}#{@__model_name_singular}_path", { id: item.id }), item.email
+

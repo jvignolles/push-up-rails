@@ -1,0 +1,27 @@
+<% quotation = @email_info[:quotation] %>
+<p>
+  <strong>Nom :</strong>
+  <%= quotation.last_name %>
+  <br />
+  <strong>Prénom :</strong>
+  <%= quotation.first_name %>
+  <br />
+  <strong>E-mail :</strong>
+  <%= mail_to(quotation.email, quotation.email) %>
+  <br />
+  <strong>Téléphone :</strong>
+  <%= quotation.phone %>
+  <br />
+  <strong>Depuis la page :</strong>
+  <%- if (p = quotation.product) %>
+    <%= link_to p.name, front_product_url(id: p), target: "_blank" %>
+  <%- elsif quotation.from_path.present? %>
+    <%= link_to quotation.from_path, quotation.from_url, target: "_blank" %>
+  <%- end %>
+</p>
+<p>
+  <strong>Message :</strong>
+  <br />
+  <%= raw strip_tags(quotation.description).gsub("\n", '<br />') %>
+</p>
+

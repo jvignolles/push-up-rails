@@ -1,0 +1,42 @@
+.row
+  .col-sm-3.images-sidebar
+    %p.button
+      = link_to parent_url, class: "btn btn-primary" do
+        = icon("arrow-left")
+        Revenir à l’onglet Images
+    %p.help-block
+      Vous êtes sur le point de définir le recadrage pour cette image.
+      Le réticule ci-dessous respecte les proportions souhaitées, et refusera de se réduire trop afin de préserver la qualité de l’image
+      %strong pleine taille
+      utilisée à terme.
+    - if @image.too_small?
+      .alert-block.alert-warning
+        Cette image est trop petite : elle fait #{@image.dimensions_text(:fullsize)} pixels, alors que le minimum requis pour la
+        visualisation pleine taille est de #{Image::dimensions_text(@image)} pixels.
+        Si vous l’utilisez tout de même, le résultat sera de faible qualité.
+  .col-sm-9
+    %p#loading-indicator
+      = image_tag "spinner_big_white.gif", alt: ""
+      Patientez, l’image se charge…
+    #image-cropper-zone.clearfix
+      = image_tag @image.public_filename(:prefull), id: "prefull-image"
+    :javascript
+      gMinDimensions = #{@image.assist_min_crop_dimensions.inspect};
+      gAspectRatio = #{@image.img.aspect_ratio};
+    = form_for @image, url: request.url, method: "post", html: { id: "image-assist-form" } do
+      = hidden_field_tag :cropping
+      .btn-toolbar
+        = link_to parent_url, class: "btn btn-default" do
+          C’est déjà bien comme ça
+          = icon("ok")
+        %button.btn.btn-large.btn-primary(type="submit" name="crop")
+          Recadrer
+          = icon("edit")
+        -#.btn-group.btn-color-picker
+          %button#btn-pad.btn.btn-default.btn-large(type="submit" name="pad" value="white")
+            = icon("external-link")
+            Entourer
+          %button#color-picker.btn.btn-default.btn-large.dropdown-toggle(rel="tooltip" title="Choisissez la couleur de remplissage" data-placement="right" data-color="white")
+            %span.color(style="background: white") &nbsp;
+            %span.caret
+

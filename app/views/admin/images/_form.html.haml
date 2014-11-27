@@ -1,0 +1,34 @@
+- context ||= image_context(imageable)
+- if context[:has_kinds]
+  - kinds = context[:base_kinds].invert #.sort { |(k1, v1), (k2, v2)| k1 && k2 ? k1 <=> k2 : (k1 ? 1 : -1) }
+  - dims = context[:base_kinds].keys.inject({}) { |acc, k| acc[k] = Image.dimensions_text(imageable, k); acc }
+  :javascript
+    gFullSizes = #{dims.to_json};
+-# if :upload == mode # local
+  -#.form-group
+    .form-field.form-field-label
+      #js-upload-button
+        %span.btn.btn-success.fileinput-button
+          %span Choisir le fichier…
+          -#= icon "plus"
+          = f.file_field :img
+          -#= f.input :img, wrapper_html: { class: "size-m" }
+          -#= f.file_field :img
+  #js-files.files(style="display: none;")
+    #js-progress.progress
+      .progress-bar.progress-bar-success
+
+- unless context[:hide_kinds]
+  = f.input :kind, collection: kinds, include_blank: false, wrapper_html: { class: "size-s" }, input_html: { class: "js-inline-value" }
+-# else
+  = f.input :kind, as: :hidden, class: "js-inline-value"
+-# if zoom_enabled
+  = f.input :zoomable, wrapper: :checkbox, input_html: { value: 1, checked: true }, input_html: { class: "js-inline-value" }
+-# else
+  = f.input :zoomable, as: :hidden, value: 0, class: "js-inline-value"
+- if context[:legendable]
+  = f.input :legend, wrapper_html: { class: "size-l" }, input_html: { class: "js-inline-value" }
+  -#= f.input :single_locale, collection: i18n_sorted_locales_for_select, input_html: { class: (:upload == mode ? "size-s" : "size-m") }
+-# else
+  = f.input :legend, as: :hidden, class: "js-inline-value"
+

@@ -1,0 +1,15 @@
+= inside_layout "front" do
+  = link_to "Aller au menu", "#menu", class: "sr-only"
+  = link_to "Aller au contenu", "#main", class: "sr-only"
+  #all
+    #wrap
+      = render "front/shared/header"
+      - if @display_breadcrumbs
+        = render "front/shared/breadcrumbs"
+      #main
+        = yield
+      - if @display_quotation
+        = render "front/shared/quotation"
+        = render "front/shared/subscription"
+      = render "front/shared/footer"
+

@@ -1,0 +1,8 @@
+<%- contact = @email_info[:contact] -%>
+Nom :     <%= contact.name %>
+E-mail :  <%= contact.email %>
+Message :
+----------------------------------------
+<%= raw strip_tags(contact.description) %>
+----------------------------------------
+

@@ -1,0 +1,11 @@
+.container.error-page
+  .row
+    .col-sm-4.icon-error.icon-404
+      %span.wrapper ?
+    .col-sm-8
+      %h1.heading Oops… Cette page n’est plus disponible !
+      %p La page à laquelle vous avez tenté d’accéder n’est plus disponible sur notre site.
+      %p Nous vous invitons à tenter une recherche ou utiliser la navigation.
+      %p.button
+        = link_to "Revenir à l’accueil", front_home_path, class: "btn btn-large btn-primary"
+

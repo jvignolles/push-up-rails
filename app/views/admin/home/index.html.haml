@@ -1,0 +1,25 @@
+-#.col-xxs-12
+  %h1.dashboard-heading Bonjour #{current_admin.first_name}
+
+.row.dashboard-row
+  - if @metrics.present?
+    .col-sm-6
+      - (@metrics || {}).each_with_index do |metric, index|
+        .col-xxs-12
+          = link_to metric[:url], class: "dashboard-block dashboard-block#{index + 1}" do
+            %span.clearfix
+              %span.icon= icon metric[:icon]
+              %span.value= metric[:value]
+              %span.name= metric[:name]
+  .col-sm-6.formatted-text
+    %h1 Bienvenue sur votre site web !
+    - if false
+      %p Si vous avec une question, un souci, ou juste l’envie de faire un retour, n’hésitez pas une seconde à me contacter :
+      %ul
+        %li par e-mail : #{link_to "julien@mg-creative.fr", "mailto:julien@mg-creative.fr"}
+        %li par téléphone : #{link_to "06 09 31 57 73", "tel:0609315773"}
+      %p
+        Tous mes vœux de succès,
+        %br
+        Julien
+

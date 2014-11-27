@@ -1,0 +1,173 @@
+<%-
+  @configuration ||= ::Configuration.instance
+  @email_info ||= {}
+  @email_info[:baseline] ||= @configuration.baseline
+  @email_info[:description] ||= @email_info[:message].slice(0, 150) + '…' if @email_info[:message].present?
+-%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="<%= @email_info[:subject] %>" />
+  <%= stylesheet_link_tag "notifier/application", { media: :all, debug: false } %>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"><center><table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable"><tr><td align="center" valign="top">
+<%- if @email_info[:description].present? || @email_info[:archive_link].present? -%>
+<table border="0" cellpadding="2" cellspacing="0" width="580" id="templatePreheader">
+  <tr>
+    <td valign="top" class="preheaderContent">
+      <table border="0" cellpadding="2" cellspacing="0" width="100%">
+        <tr>
+          <td valign="top" class="preheaderDescription">
+          <%- if @email_info[:description].present? -%>
+            <div><%= @email_info[:description] %></div>
+          <%- end -%>
+          </td>
+          <td valign="top" width="290" class="preheaderPreview">
+          <%- if @email_info[:archive_link].present? -%>
+            <div>Cet e-mail ne s’affiche pas correctement ?<br /><a href="<%= @email_info[:archive_link] %>" target="_blank">Lisez le dans votre navigateur</a>.</div>
+          <%- end -%>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<%- else -%>
+<br />
+<%- end -%>
+<table border="0" cellpadding="0" cellspacing="0" width="580" id="templateContainer">
+  <tr>
+    <td align="center" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" width="580" id="templateHeader">
+        <tr>
+          <td class="headerContent logo">
+            <a href="<%= front_home_url %>" title="<%= app_name %>" target="_blank">
+              <%- if (image = @configuration.images.for_kind(:logo_app).first).present? -%>
+                <img src="<%= image_path(image.img.configuration.logo_app.notifier.url) %>" style="height:35px;" id="headerImage" class="image_fix" height="35" alt="<%= app_name %>" />
+              <%- else -%>
+                <%= app_name -%>
+              <%- end -%>
+            </a>
+          </td>
+          <td class="headerContent baseline"><div><%= @email_info[:baseline].blank? ? "" : split_on_the_middle(@email_info[:baseline]).join("<br />").html_safe %></div></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" width="580" id="templateBody">
+        <tr>
+          <td valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="<%= @email_info[:sidebar] ? 380 : 580 %>">
+              <tr>
+                <td valign="top" class="bodyContent">
+                  <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                    <tr>
+                      <td valign="top">
+                        <div>
+<%= yield %>
+                        </div>
+                        <div class="signature"><p><span>L’équipe <a href="<%= front_home_url %>" target="_blank"><%= app_name %></a></span></p></div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+<%- if @email_info[:sidebar] -%>
+          <td valign="top" width="200" id="templateSidebar">
+            <table border="0" cellpadding="0" cellspacing="0" width="200">
+              <tr>
+                <td valign="top" class="sidebarContent">
+<%- if false -%>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td valign="top" style="padding:10px;padding-bottom:20px;">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td width="20" height="40">&nbsp;</td>
+                            <td width="40" align="center" valign="middle"><a href="<%= @configuration.facebook_url %>" title="Facebook" target="_blank"><img src="<%= dyn_image_url("email/icon_facebook.png") %>" alt="Facebook" style="margin:0 !important;" class="image_fix" width="40" height="40" /></a></td>
+                            <td width="20">&nbsp;</td>
+                            <td width="40" align="center" valign="middle"><a href="<%= @configuration.twitter_url %>" title="Twitter" target="_blank"><img src="<%= dyn_image_url("email/icon_twitter.png") %>" alt="Twitter" style="margin:0 !important;" class="image_fix" width="40" height="40" /></a></td>
+                            <td width="20">&nbsp;</td>
+                            <td width="40" align="center" valign="middle"><a href="<%= @configuration.googleplus_url %>" title="Google+" target="_blank"><img src="<%= dyn_image_url("email/icon_googleplus.png") %>" alt="Google+" style="margin:0 !important;" class="image_fix" width="40" height="40" /></a></td>
+                            <td width="20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+<%- end -%>
+                  <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                    <tr>
+                      <td valign="top">
+                        <img src="<%= dyn_image_url("email/business.png") %>" style="width:160px;height:89px;" alt="" width="160" height="89" />
+                        <div style="margin-top: 1em;">
+                           <h4 class="h4" align="center" style="text-align: center;">Titre sidebar</h4>
+                           <p>Vous souhaitez proposer une sidebar à vos internautes ?</p>
+                           <p align="center" style="text-align: center;"><a href="<%= front_home_url %>" target="_blank">Créez votre compte !</a>
+                             <br />C’est rapide et gratuit.</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+<%- end -%>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <table border="0" cellpadding="10" cellspacing="0" width="580" id="templateFooter">
+        <tr>
+          <td valign="top" class="footerContent">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+<%- if false -%>
+              <tr>
+                <td valign="top" width="140">
+                  <div><a href="<%= front_info_who_we_are_url %>" target="_blank"><%= t("editorials.labels.who_we_are") %></a>
+                    <br /><a href="<%= front_contact_url  %>" target="_blank">Nous contacter</a>
+                  </div>
+                </td>
+                <td valign="top" width="220">
+                  <div><a href="<%= front_info_terms_of_service_url %>" target="_blank"><%= t("editorials.labels.terms_of_service") %></a>
+                    <br /><a href="<%= front_info_privacy_policy_url %>" target="_blank"><%= t("editorials.labels.privacy_policy") %></a>
+                  </div>
+                </td>
+                <td valign="top" width="160" id="socialNetworks"><div>
+                  <table border="0" cellpadding="0" cellspacing="0" width="160">
+                    <tr>
+                      <td width="40" height="40"><a href="<%= @configuration.facebook_url %>" title="Facebook" target="_blank"><img src="<%= dyn_image_url("email/icon_facebook_grey.png") %>" alt="FB" width="40" height="40" class="image_fix" /></a></td>
+                      <td width="20">&nbsp;</td>
+                      <td width="40"><a href="<%= @configuration.twitter_url %>" title="Twitter" target="_blank"><img src="<%= dyn_image_url("email/icon_twitter_grey.png") %>" alt="Twitter" width="40" height="40" class="image_fix" /></a></td>
+                      <td width="20">&nbsp;</td>
+                      <td width="40"><a href="<%= @configuration.googleplus_url %>" title="Google+" target="_blank"><img src="<%= dyn_image_url("email/icon_googleplus_grey.png") %>" alt="G+" width="40" height="40" class="image_fix" /></a></td>
+                    </tr>
+                  </table>
+                </div></td>
+              </tr>
+<%- end -%>
+              <tr>
+                <td colspan="3" valign="middle" id="utility">
+                  <div><em>&copy; <%= copyright_years %> <a href="<%= front_home_url %>" target="_blank"><%= app_name %></a></em></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br /></td></tr></table></center>
+</body>
+</html>
+

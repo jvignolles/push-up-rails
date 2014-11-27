@@ -1,0 +1,14 @@
+<%- @email_info ||= {} -%>
+<%= yield %>
+
+<%- if @email_info[:sidebar].present? -%>
+Titre sidebar
+Vous souhaitez proposer une sidebar à vos internautes ?
+Créez votre compte ! C'est rapide et gratuit :
+<%= front_home_url %>
+<%- end -%>
+
+-- 
+L’équipe <%= app_name %>
+<%= front_home_url %>
+

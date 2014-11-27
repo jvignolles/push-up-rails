@@ -1,0 +1,13 @@
+- unless defined?(scope); scope = nil; end
+- url = send([scope, resource_name, "session_path"].reject(&:blank?).join("_"))
+= simple_form_for resource, as: resource_name, url: url, html: { class: simple_form_classes } do |f|
+  - if @page_heading.present?
+    %h1.heading= @page_heading
+  = render "admin/shared/errors", resource: resource
+  = f.input :email, required: true, wrapper_html: { class: "size-m" }
+  = f.input :password, required: true, wrapper_html: { class: "size-m" }
+  - if Devise.mappings[resource_name].rememberable?
+    - checked = (x = (params[resource.class.to_s.underscore.to_sym] || {})[:remember_me]).nil? ? true : 0 != x.to_i
+    = f.input :remember_me, as: :boolean, wrapper: :inline_checkbox, label: false, inline_label: t("devise.shared.remember_me"), input_html: { checked: checked }
+  = submit_button form: f, kind: :submit
+

@@ -1,0 +1,67 @@
+@import "bootstrap/themes/deepblue/variables";
+@import "bootstrap/themes/deepblue/mixins";
+
+// Custom
+@mixin selection {
+  ::-moz-selection { color: white; background: #08c; text-shadow: 0 0 0 none !important; }
+  ::selection      { color: white; background: #08c; text-shadow: 0 0 0 none !important; }
+}
+@mixin color-black { color: black; text-shadow: 1px 1px 1px white; @include selection; }
+@mixin color-white { color: white; text-shadow: 1px 1px 1px black; @include selection; }
+@mixin ellipsis($no-wrap: true) {
+  @if $no-wrap {
+    white-space: nowrap; }
+  overflow: hidden; text-overflow: ellipsis;
+}
+@mixin opacity($opacity) {
+  filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+  opacity: $opacity;
+}
+
+// Bourbon
+  @import "functions/compact";
+//@import "functions/deprecated-webkit-gradient";
+//@import "functions/flex-grid";
+//@import "functions/grid-width";
+//@import "functions/linear-gradient";
+//@import "functions/modular-scale";
+//@import "functions/px-to-em";
+//@import "functions/radial-gradient";
+//@import "functions/render-gradients";
+//@import "functions/tint-shade";
+//@import "functions/transition-property-name";
+//@import "css3/animation";
+//@import "css3/appearance";
+//@import "css3/background";
+//@import "css3/background-image";
+//@import "css3/background-size";
+//@import "css3/border-image";
+  @import "css3/border-radius";
+//@import "css3/box-sizing";
+//@import "css3/columns";
+//@import "css3/flex-box";
+//@import "css3/font-face";
+//@import "css3/hidpi-media-query";
+//@import "css3/image-rendering";
+//@import "css3/inline-block";
+//@import "css3/keyframes";
+  @import "css3/linear-gradient";
+//@import "css3/perspective";
+//@import "css3/radial-gradient";
+//@import "css3/transform";
+  @import "css3/transition";
+//@import "css3/user-select";
+//@import "css3/placeholder";
+//@import "addons/button";
+//@import "addons/clearfix";
+//@import "addons/font-family";
+//@import "addons/hide-text";
+//@import "addons/html5-input-types";
+//@import "addons/position";
+  @import "addons/prefixer";
+//@import "addons/retina-image";
+//@import "addons/size";
+//@import "addons/timing-functions";
+//@import "addons/triangle";
+//@import "bourbon-deprecated-upcoming";
+

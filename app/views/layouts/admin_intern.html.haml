@@ -1,0 +1,41 @@
+= inside_layout "admin" do
+  %nav#menu.container.navbar.navbar-inverse{ role: "navigation" }
+    .row
+      .col-sm-12
+        = render "admin/shared/horizontal_menu", menu: @menu
+  #header.container
+    .row
+      .col-sm-3
+        = link_to front_home_path, class: "logo", title: "Revenir à l’accueil", rel: "external" do
+          - if (image = @configuration.images.for_kind(:logo_app).first).present?
+            = image_tag image.img.configuration.logo_app.admin.url, alt: app_name
+          - else
+            = app_name
+      .col-sm-8
+        = render "admin/shared/breadcrumbs"
+        -#%form.search.input-append{ method: :get, action: "#", class: "col-sm-3" }
+          .col-sm-10
+            = text_field_tag "global_search", params[:global_search], :class => "input-block-level"
+          .col-sm-2
+            %button.btn.input-block-level{ :type => :submit }= icon("search")
+      = yield :preview
+  .container
+    .row
+      - if @display_sidebar
+        .col-sm-3
+          = yield :sidebar
+      %div{ :class => "col-sm-#{@display_sidebar ? 9 : 12}" }
+        = render "admin/shared/flashes"
+        #main
+          = yield
+  = render "admin/shared/footer"
+  #bootstrap-confirm.modal.hide
+    .modal-header
+      %button.close(type="button" data-dismiss="modal" aria-hidden="true") &times;
+      %h3 Supprimer ?
+    .modal-body
+      %p.message Êtes-vous sûr(e) de vouloir supprimer cet élément ?
+    .modal-footer
+      %a.btn.btn-danger.yes Oui, supprimer
+      %a.btn.no Non, conserver
+

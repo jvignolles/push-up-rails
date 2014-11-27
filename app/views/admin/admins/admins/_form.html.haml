@@ -1,0 +1,33 @@
+- item = form.object
+= render "admin/shared/errors", item: item
+%fieldset.row
+  .col-xxs-12
+    %legend Identité
+  .col-md-6
+    = form.input :civility, as: :radio_buttons, collection: civilities, item_wrapper_class: "inline", required: true
+    = form.input :first_name, wrapper_html: { class: "size-s" }, autofocus: true
+    = form.input :last_name, wrapper_html: { class: "size-s" }
+    = form.input :email, wrapper_html: { class: "size-m" }
+    = form.input :password, hint: false, label: "Mot de passe", wrapper_html: { class: "size-s" }
+    = form.input :password_confirmation, label: "Confirmer mot de passe", wrapper_html: { class: "size-s" }
+  .col-md-6
+    .form-group
+      .control-label  
+    - [:home, :mobile, :work].each do |kind|
+      = form.input "phone_#{kind}".to_sym, wrapper_html: { class: "size-s" }
+  .col-xxs-12
+    - unless item.new_record?
+      .form-group
+        .control-label Créé le
+        .form-field
+          .form-control-text= format_datetime(item.created_at)
+    - if current_admin.admin?
+      - if item.id == current_admin.id
+        .form-group
+          .control-label
+          .form-field
+            .form-control-text Vous avez tous les droits
+      - else
+        = form.input :active, wrapper: :inline_checkbox
+        = form.input :admin, wrapper: :inline_checkbox
+

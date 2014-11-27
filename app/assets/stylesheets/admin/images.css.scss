@@ -1,0 +1,166 @@
+@import "variables";
+@import "mixins";
+
+#loading-indicator {
+  text-align: center;
+}
+#image-cropper-zone {
+  text-align: center;
+}
+.jcrop-holder {
+  display: inline-block;
+}
+#image-assist-form {
+  text-align: center;
+  margin-top: 1em;
+  .btn-color-picker {
+    margin-left: 20px;
+  }
+  .btn-toolbar {
+    margin-bottom: 3em;
+    .btn-group {
+      float: none;
+    }
+  }
+}
+#js-files .form-group {
+  margin-bottom: 0;
+}
+#images {
+  .files .file {
+    height: em(32px);
+    line-height: em(32px);
+    margin-bottom: 1em;
+    .file-filename {
+      display: inline-block;
+      margin-right: 1em;
+    }
+    .file-spinner {
+      display: inline-block;
+      background: transparent image-url('spinner_big_white.gif') left center no-repeat;
+      padding-left: 3em;
+      color: #aaa;
+    }
+  }
+  .upload-image-input {
+    .fileinput {
+      margin-bottom: 0;
+    }
+    .thumbnail {
+      float: left;
+      width: 130px;
+      height: 90px;
+      margin-right: 20px;
+      margin-bottom: 0;
+      img {
+        display: block;
+        max-width: 120px;
+        max-height: 80px;
+      }
+    }
+    .btn-file {
+      cursor: pointer;
+      .fileinput-new, .fileinput-exists {
+        cursor: pointer;
+      }
+    }
+    .btn-remove {
+      margin-left: 20px;
+    }
+    .fileinput-actions {
+      float: left;
+    }
+  }
+  ol.reorderable {
+    margin: 20px 0;
+  }
+  .thumbnails {
+    position: relative;
+  }
+  li {
+    float: left;
+    background: #eee image-url('spinner_big_white.gif') center center no-repeat;
+    padding: 5px;
+    height: auto;
+    margin-left: 0;
+    margin-right: 30px; // Switch Bootstrap's default spacing
+    @include transition(none); // Avoid Sortable-induced weird pos/size anims
+    &.highlighted {
+      background: #ffc;
+    }
+  }
+  .mover {
+    font-size: 11px;
+    cursor: move;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 5px;
+    background-color: #ddd;
+    border: 1px dashed #888;
+  }
+  .mover:hover {
+    background-color: #88bbff;
+    border-color: #004488;
+  }
+  .image-link {
+    display: inline-block;
+  }
+  .image-img {
+    display: block;
+    height: 135px;
+  }
+  .actions {
+    float: left;
+    line-height: 14px;
+    height: 30px;
+    margin-top: 5px;
+    a {
+      float: left;
+      padding: 8px;
+      //height: 14px;
+      &:hover {
+        background-color: #88bbff;
+      }
+    }
+    i {
+      margin-top: 0;
+    }
+  }
+  .kind-info {
+    float: right;
+    font-size: smaller;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .insertion-point {
+    list-style-type: none;
+    background: #f9f9f9;
+    width: 160px;
+    height: 217px;
+    border: 1px dashed silver;
+    margin-left: 0; margin-right: 30px;
+  }
+}
+#color-picker .color {
+  display: inline-block;
+  width: 20px;
+  outline: 1px solid silver;
+}
+#image-updater {
+  .image {
+    text-align: center;
+  }
+}
+.images-sidebar {
+  .button {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  .help-block {
+    margin-bottom: 1em;
+  }
+}
+

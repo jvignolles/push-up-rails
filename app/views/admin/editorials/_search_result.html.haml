@@ -1,0 +1,43 @@
+- unless defined?(:deleters)
+  - deleters = false
+- init_class_infos
+- if items.present?
+  - display_all_images = false
+  %table.listing.table.table-striped.table-hover.parent-lightbox
+    %thead
+      %tr
+        %th.col-sm-1 Actions
+        %th.col-sm-2 Image
+        -#%th.col-sm-1 ID
+        %th Nom
+        - if deleters
+          %th.col-sm-1
+            %abbr{ title: "Supprimer" } Suppr.
+    %tbody
+      - items.each do |item|
+        - has_active = item.respond_to?(:active)
+        - has_images = item.respond_to?(:images) || item.respond_to?(:image)
+        - item_exists = item.is_a?(Editorial)
+        - item_deletable = item_exists && item.kind.blank?
+        - item_name = item_exists ? item.name : item[:name]
+        - edit_url = item_exists ? send("edit_#{@__namespaces_}#{@__model_name_singular}_path", { id: item.id }) : send("new_#{@__namespaces_}#{@__model_name_singular}_path", { kind: item[:kind] })
+        - edit_label = "Éditer"
+        - classes = []
+        - classes << "inactive" if !item_exists || (has_active && !item.active)
+        %tr{ class: classes }
+          %td.buttons-group
+            .btn-group
+              = link_to_icon "edit", edit_url, title: edit_label
+          %td.link.image
+            - if has_images
+              - (display_all_images ? item.images : [item.images.first]).compact.each do |image|
+                = link_to image.img.prefull.url, class: "image-link custom-lightbox", rel: "group", title: item_name do
+                  = image_tag image.img.small.url, alt: "", title: item_name, class: "image-link-img"
+          -#%td.link= link_to "##{item.id}", edit_url
+          %td.link= link_to item_name, edit_url
+          - if deleters
+            %td.buttons-group
+              .btn-group
+                - if item_deletable
+                  = delete_link send("#{@__namespaces_}#{@__model_name_singular}_path", { id: item.id }), item_name
+

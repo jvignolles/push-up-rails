@@ -1,0 +1,20 @@
+%fieldset.disabled
+  %legend Demande de contact
+  .form-horizontal.form-regular.form-show
+    .form-group
+      %label.control-label Date
+      .form-field
+        .form-control= format_datetime(item.created_at)
+    .form-group
+      %label.control-label Nom
+      .form-field
+        .form-control= item.name
+    .form-group
+      %label.control-label E-mail
+      .form-field
+        .form-control= mail_to item.email
+    .form-group
+      %label.control-label Message
+      .form-field
+        %textarea.form-control{ rows: "10", disabled: "disabled" }= item.description
+

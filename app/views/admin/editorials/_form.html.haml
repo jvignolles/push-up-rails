@@ -1,0 +1,18 @@
+- item = form.object
+= render "admin/shared/errors", item: item
+%fieldset.row
+  .col-xxs-12
+    %legend Informations générales
+  .col-xxs-12
+    = form.input :active, wrapper: :inline_checkbox
+    = form.input :name, wrapper_html: { class: "size-m" }, autofocus: true
+    -#= form.input :in_lateral_menu, wrapper: :inline_checkbox
+    = form.input :text1, input_html: { rows: 4, class: "tinymce" }
+    = form.input :text2, input_html: { rows: 4, class: "tinymce" }
+    = form.input :text3, input_html: { rows: 4, class: "tinymce" }
+-# Examples
+  .col-md-6
+    = form.input :civility, as: :radio_buttons, collection: civilities, item_wrapper_class: "inline", required: true
+    = form.input :comment, input_html: { rows: 4 }
+    = form.input :description, input_html: { rows: 4, class: "tinymce" }
+

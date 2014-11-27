@@ -1,0 +1,11 @@
+- if !defined?(uploader)
+  - uploader = @image.img
+  - if Figaro.env.s3_enabled.to_bool
+    - uploader.success_action_status = "201" # DEV NOTE: String, otherwise S3 returns the error "Invalid Policy: Invalid Simple-Condition: value must be a string."
+%input{ type: "hidden", name: "key",                     value: uploader.key }
+%input{ type: "hidden", name: "AWSAccessKeyId",          value: uploader.aws_access_key_id }
+%input{ type: "hidden", name: "acl",                     value: uploader.acl }
+%input{ type: "hidden", name: "success_action_status",   value: uploader.success_action_status }
+%input{ type: "hidden", name: "policy",                  value: uploader.policy }
+%input{ type: "hidden", name: "signature",               value: uploader.signature }
+

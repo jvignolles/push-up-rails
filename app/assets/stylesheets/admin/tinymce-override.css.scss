@@ -1,0 +1,40 @@
+// @import "configuration";
+
+body {
+  /* content.css */
+  a.mceItemAnchor { background-image: image-url("/assets/themes/advanced/skins/default/img/items.gif"); }
+  .mceItemShockWave { background-image: image-url("/assets/themes/advanced/img/shockwave.gif"); }
+  .mceItemFlash { background-image: image-url("/assets/themes/advanced/img/flash.gif"); }
+  .mceItemQuickTime { background-image: image-url("/assets/themes/advanced/img/quicktime.gif"); }
+  .mceItemWindowsMedia { background-image: image-url("/assets/themes/advanced/img/windowsmedia.gif"); }
+  .mceItemRealMedia { background-image: image-url("/assets/themes/advanced/img/realmedia.gif"); }
+  .mceItemVideo { background-image: image-url("/assets/themes/advanced/img/video.gif"); }
+  .mceItemAudio { background-image: image-url("/assets/themes/advanced/img/video.gif"); }
+  .mceItemEmbeddedAudio { background-image: image-url("/assets/themes/advanced/img/video.gif"); }
+  .mceItemIframe { background-image: image-url("/assets/themes/advanced/img/iframe.gif"); }
+  .mcePageBreak { background-image: url("/assets/themes/advanced/img/pagebreak.gif"); }
+  /* dialog.css */
+  #insert, #cancel, input.button, .updateButton { background-image: image-url("/assets/themes/advanced/skins/default/img/buttons.png"); }
+  #insert { background-image: image-url("/assets/themes/advanced/skins/default/img/buttons.png"); }
+  #cancel { background-image: image-url("/assets/themes/advanced/skins/default/img/buttons.png"); }
+  a.browse span { background-image: image-url("/assets/themes/advanced/img/icons.gif"); }
+  a.pickcolor span { background-image: image-url("/assets/themes/advanced/img/icons.gif"); }
+  .tabs { background-image: image-url("/assets/themes/advanced/skins/default/img/tabs.gif"); }
+  .tabs li { background-image: image-url("/assets/themes/advanced/skins/default/img/tabs.gif"); }
+  .tabs li.current { background-image: image-url("/assets/themes/advanced/skins/default/img/tabs.gif"); }
+  .tabs span { background-image: image-url("/assets/themes/advanced/skins/default/img/tabs.gif"); }
+  .tabs .current span { background-image: image-url("/assets/themes/advanced/skins/default/img/tabs.gif"); }
+  /* ui.css */
+  .defaultSkin .mceExternalClose { background-image: url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceStatusbar a.mceResize { background-image: url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceIcon { background-image: url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceSeparator { background-image: url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceListBox .mceOpen { background:url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceSplitButton span.mceAction { background-image:url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceSplitButton a.mceOpen { background-image: url("/assets/themes/advanced/img/icons.gif"); }
+  .defaultSkin .mceMenuItemSelected .mceIcon { background-image: url("/assets/themes/advanced/skins/default/img/menu_check.gif"); }
+  .defaultSkin .mceNoIcons .mceMenuItemSelected a { background-image: url("/assets/themes/advanced/skins/default/img/menu_arrow.gif"); }
+  .defaultSkin .mceMenuItemSub a { background-image: url("/assets/themes/advanced/skins/default/img/menu_arrow.gif"); }
+  .defaultSkin .mceProgress { background-image: url("/assets/themes/advanced/skins/default/img/progress.gif"); }
+}
+

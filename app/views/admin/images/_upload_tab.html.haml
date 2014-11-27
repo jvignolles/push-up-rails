@@ -1,0 +1,45 @@
+- context ||= image_context(imageable)
+- if !defined?(images) || images.blank?
+  - if context[:allows_many_images]
+    - images = imageable.images
+  - else
+    - images = [imageable.image].compact
+
+:javascript
+  pushUpRailsCreateImageURL = '#{send("#{@__namespaces_}#{@__model_name_singular}_images_url", { "#{@__model_name_singular}_id" => imageable.id })}';
+  pushUpRailsReloadImageListURL = '#{send("list_#{@__namespaces_}#{@__model_name_singular}_images_url", { "#{@__model_name_singular}_id" => imageable.id })}';
+  pushUpRailsReloadUploadFormURL = '#{send("upload_form_#{@__namespaces_}#{@__model_name_singular}_images_url", { "#{@__model_name_singular}_id" => imageable.id })}';
+  gUpdateOrderPath = '#{send("reorder_#{@__namespaces_}#{@__model_name_singular}_images_url", { "#{@__model_name_singular}_id" => imageable.id })}';
+
+#images
+  %fieldset
+    %legend Ajouter une image
+    #js-upload-form-wrapper= render "admin/images/upload_form", imageable: imageable, context: context
+  %fieldset
+    - if images.blank?
+      %legend#image-count Aucune image
+    - else
+      %legend#image-count
+      -#= pluralize(images.size, "image")
+    %ol#list.reorderable.free-axis.thumbnails.clearfix.parent-lightbox
+      - if images.present?
+        = render "admin/images/list", imageable: imageable, context: context, images: images
+
+- if context[:has_attributes]
+  #image-updater.modal.fade
+    .modal-dialog
+      .modal-content
+        = simple_form_for [:admin, @image], url: "images", html: { class: "form-horizontal form-regular", method: :put } do |f|
+          .modal-header
+            %button.close(type="button" aria-hidden="true" data-dismiss="modal") ×
+            %h4 Mettre à jour l’image
+          .modal-body
+            %p.image
+              %img
+            %fieldset
+              %legend Attributs
+              = render "admin/images/form", imageable: imageable, context: context, mode: :update, f: f
+          .modal-footer
+            %a.btn.btn-default.dismiss.no(href="#") Annuler
+            %a.btn.btn-primary.yes(href="#") Mettre à jour
+

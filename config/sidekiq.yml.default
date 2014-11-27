@@ -1,0 +1,6 @@
+---
+:concurrency: 25
+:pidfile: tmp/pids/sidekiq/sidekiq.pid
+:queues:
+  - default
+  - image

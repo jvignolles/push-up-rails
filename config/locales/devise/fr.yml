@@ -1,0 +1,98 @@
+# encoding: utf-8
+#########################################################################################################
+# I18n French translation for Devise (http://github.com/plataformatec/devise)
+# I18n traduction française pour Devise
+#
+# Mise à jour par Yabo-concept http://www.yabo-concept.ch pour refléter les dernières clés utilisées par devise
+# dans la branche "translated-views"
+# basé sur https://github.com/davidw/devise/blob/translated-views/config/locales/en.yml
+# 15.3.2011
+#########################################################################################################
+
+fr:
+  errors:
+    messages:
+      not_found: "n’a pas été trouvé(e)"
+      already_confirmed: "a déjà été confirmé(e)"
+      not_locked: "n’était pas bloqué(e)"
+      not_saved:
+        one: "1 erreur a empéché cet %{resource} d’être sauvegardé :"
+        other: "%{count} erreurs ont empéché ce %{resource} d’être sauvegardé :"
+  devise:
+    shared:
+      sign_in: "Connexion"
+      sign_up: "Inscription"
+      free_sign_up: "Inscription gratuite"
+      sign_out: "Déconnexion"
+      forgot_password: "Mot de passe perdu ?"
+      didnt_receive_confirmation_instructions: "Vous n’avez pas reçu l’e-mail pour confirmer votre adresse e-mail ?"
+      didnt_receive_unlock_instructions: "Votre compte est bloqué et vous n’avez pas reçu l’e-mail pour le débloquer ?"
+      sign_in_with_omniauth: "Se connecter avec %{provider}"
+      remember_me: "Se souvenir de moi"
+    failure:
+      already_authenticated: "Vous êtes déjà connecté"
+      unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer"
+      unconfirmed: "Vous devez confirmer votre adresse e-mail pour continuer"
+      locked: "Votre compte est bloqué"
+      invalid: "E-mail ou mot de passe incorrect"
+      invalid_token: "Jeton d’authentification incorrect"
+      timeout: "Votre session est expirée, veuillez vous reconnecter pour continuer"
+      inactive: "Votre compte n’est pas encore activé"
+      admin:
+        not_found_in_database: "E-mail ou mot de passe incorrect"
+      user:
+        not_found_in_database: "E-mail ou mot de passe incorrect"
+    sessions:
+      signed_in: "Vous êtes connecté"
+      signed_out: "Vous êtes déconnecté"
+    passwords:
+      change_your_password: "Changez votre mot de passe"
+      new_password: "Nouveau mot de passe"
+      confirm_new_password: "Confirmer le nouveau mot de passe"
+      change_my_password: "Changer mon mot de passe"
+      send_reset_password_instructions: "Envoyez-moi les explications pour modifier mon mot de passe"
+      send_instructions: "Vous allez recevoir un e-mail dans quelques instants, il contient les explications pour modifier votre mot de passe"
+      updated: "Votre mot de passe a été modifié, vous êtes connecté"
+      updated_not_active: "Votre mot de passe a été modifié"
+    confirmations:
+      resend_instructions: "Ré-envoyer les explications pour confirmer mon adresse e-mail"
+      send_instructions: "Vous allez recevoir un e-mail dans quelques instants, il contient les explications pour confirmer votre adresse e-mail"
+      confirmed: "Votre adresse e-mail a été confirmée, vous êtes connecté"
+    registrations:
+      signed_up: "Bienvenue, vous êtes connecté"
+      edit: "Éditer %{resourcename}"
+      leave_blank: "laissez vide si vous ne désirez pas le changer"
+      current_password_label: "Votre mot de passe actuel est requis pour confirmer les changements"
+      update: "Modifier"
+      unhappy: "Mécontent"
+      cancel_my_account: "Annuler mon compte"
+      confirm: "Êtes-vous sûr ?"
+      back: "Retour"
+      signed_up_but_inactive: "Vous vous êtes connecté. Cependant, nous n’avons pas pu vous identifier car votre compte est %{reason}."
+      updated: "Votre compte a été modifié"
+      destroyed: "Votre compte a été annulé. Nous espérons vous revoir bientôt."
+    unlocks:
+      resend_instructions: "Ré-envoyer les explications pour débloquer mon compte"
+      send_instructions: "Vous allez recevoir un e-mail dans quelques instants, il contient les explications pour débloquer votre compte"
+      unlocked: "Votre compte a été débloqué, vous êtes connecté"
+    omniauth_callbacks:
+      success: "Vous êtes identifié avec votre compte %{kind}."
+      failure: "Nous n’avons pas pu vous identifier à %{kind} pour la raison suivante: '%{reason}'."
+    mailer:
+      hello: "Bienvenue %{email} !"
+      welcome: "Bienvenue %{email} !"
+      confirm: "Confirmer mon compte"
+      change: "Changer mon mot de passe"
+      someone_requested: "Un changement de mot de passe a été demandé. Vous pouvez le faire en cliquant sur le lien ci-dessous."
+      please_ignore: "Si vous n’avez pas fait cette demande, veuillez ignorer cet e-mail."
+      password_wont_change: "Votre mot de passe ne sera pas changé tant que vous n’aurez pas accédé au lien ci-dessus pour en créer un nouveau."
+      locked: "Votre compte a été bloqué à cause d’un nombre excessif de tentatives de connexion."
+      click_to_unlock: "Cliquez sur le lien ci-dessous pour débloquer votre compte"
+      unlock: "Débloquer mon compte"
+      confirmation_instructions:
+        subject: "Instructions de confirmation"
+      reset_password_instructions:
+        subject: "Instructions pour changer le mot de passe"
+      unlock_instructions:
+        subject: "Instructions pour débloquer le compte"
+

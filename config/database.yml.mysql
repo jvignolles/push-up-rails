@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password:
+
+development:
+  <<: *default
+  database: pushuprails_dev
+
+test:
+  <<: *default
+  database: pushuprails_test
+
+production:
+  <<: *default
+  database: pushuprails
+  pool: 10

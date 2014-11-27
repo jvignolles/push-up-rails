@@ -1,0 +1,151 @@
+# encoding: utf-8
+fr:
+  helpers:
+    submit:
+      defaults:
+        confirm: Confirmer
+        create: Créer
+        update: Mettre à jour
+        send: Envoyer
+        submit: Valider
+        upload: Envoyer
+        ok: OK
+      search:
+        submit: "Rechercher"
+      comment:
+        create: "Ajouter à la main courante"
+  simple_form:
+    "yes": "Oui"
+    "no": "Non"
+    required:
+      text: "obligatoire"
+      mark: "*"
+    error_notification:
+      default_message: "Merci de corriger les problèmes suivants :"
+    labels:
+      defaults:
+        active: Actif
+        address: Adresse
+        admin: Donner tous les droits
+        author: Auteur
+        birthday: "Date de naissance"
+        building: Bâtiment
+        city: Ville
+        city_name: Ville
+        civility: "Civilité"
+        created_at: "Créé le"
+        comment: Commentaire
+        company: Société
+        complement: Complément
+        country_code: Pays
+        country_id: Pays
+        country_ids: Pays
+        country: Pays
+        day: Jour(s)
+        deleted_at: "Dernière modification le"
+        description: Description
+        door: Porte
+        duration: Durée
+        email: "E-mail"
+        fax: "Fax"
+        first_name: "Prénom"
+        floor: Étage
+        kind: Genre
+        last_name: Nom
+        login: Identifiant
+        name: Nom
+        newsletter: Inscrit Newsletter
+        password: "Mot de passe"
+        password_confirmation: "Confirmer mot de passe"
+        per_page: "Résultats"
+        phone: Téléphone
+        phone_home: Tél. domicile
+        phone_mobile: Tél. mobile
+        phone_work: Tél. travail
+        phone_fax: Fax
+        pin: Digicode
+        pin1: Digicode 1
+        pin2: Digicode 2
+        price: Prix
+        result_per_page: Résultats
+        seo_description: Description (meta)
+        seo_h1: Balise H1
+        seo_keywords: Mots-clés (meta)
+        seo_title: Titre (meta)
+        tag_ids: Thématiques
+        terms_of_service: "J’accepte les conditions générales d’utilisation"
+        text: Texte
+        updated_at: "Dernière modification le"
+        url: URL
+        website: Site web
+        zip_code: Code postal
+      admin:
+        current_password: Mot de passe actuel
+      banner:
+        button: Texte du bouton
+      configuration:
+        app_name: "Nom du site web"
+        baseline: "Accroche"
+        company_name: "Nom de la société"
+        email_contact: "E-mail"
+        intracom_vat_number: "N° TVA Intracom."
+        open_hours: "Horaires d’ouverture abrégés"
+        open_hours_details: "Horaires d’ouverture détaillés"
+        seo_default_description: Description
+        seo_default_keywords: Mots-clés
+        seo_default_title: Titre
+        siren: "SIREN"
+        siret: "SIRET"
+        twitter_url: Adresse Twitter
+        website_on_hold: "Site web en maintenance"
+        website_on_hold_description: "Message de maintenance"
+        facebook_url: URL Facebook
+        googleplus_url: "URL Google+"
+        instagram_url: URL Instagram
+        pinterest_url: URL Pinterest
+        twitter_url: URL Twitter
+      contact:
+        subject: Objet
+        description: Message
+      drop_box_item:
+        file: "Fichier à envoyer"
+      editorial:
+        in_lateral_menu: "Afficher dans le menu latéral"
+        name: Titre
+        text1: Texte 1
+        text2: Texte 2
+        text3: Texte 3
+      image:
+        img: Fichier image
+        legend: Légende
+        single_locale: Limité à la langue
+        zoomable: Éligible au zoom
+      message:
+        content: "Réponse"
+      product:
+        resume: Résumé
+        preview: Aperçu
+        budget: Budget
+      subscriptions:
+        file: Fichier
+      user:
+        current_password: Mot de passe actuel
+    placeholders:
+      defaults:
+        birthday: jj/mm/aaaa
+        email: Adresse e-mail
+        first_name: Prénom
+        last_name: Nom
+        url: http://…
+      configuration:
+        facebook_url: http://…
+        googleplus_url: http://…
+        instagram_url: http://…
+        pinterest_url: http://…
+        twitter_url: http://…
+      quotation:
+        description: Vos envies pour ce voyage
+        phone: Téléphone
+      search:
+        text: Mon texte…
+

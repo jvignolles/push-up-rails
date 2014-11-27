@@ -1,0 +1,53 @@
+- context ||= image_context(imageable)
+- @image ||= Image.new(imageable: imageable)
+- @uploader ||= @image.img
+- if Figaro.env.s3_enabled.to_bool
+  - @uploader.success_action_status = "201" # DEV NOTE: String, otherwise S3 returns the error "Invalid Policy: Invalid Simple-Condition: value must be a string."
+
+- if Figaro.env.s3_enabled.to_bool
+  -# DEV NOTE: UGLY HACK to get styled simple form fields.
+  - sf_fields = nil
+  - simple_form_for [:admin, @image], url: "images" do |f|
+    - sf_fields = render(partial: "admin/images/form", locals: { imageable: imageable, context: context, f: f, with_submit: false })
+
+  = direct_upload_form_for @uploader, html: { class: simple_form_classes("form-images js-form-upload"), id: "js-form-upload", multipart: true, autocomplete: "off" } do |f|
+    = sf_fields.html_safe
+    #js-upload-button.form-group
+      .form-field.form-field-label
+        %span.btn.btn-success.fileinput-button
+          %span#js-s3-fields Choisir le fichier…
+          = f.file_field :img, use_action_status: true
+    #js-files(style="display: none;")
+      .form-group
+        .form-field.form-field-label
+          .files
+          #js-progress-bar.progress(style="display: none;")
+            .progress-bar.progress-bar-success.progress-bar-stripped.active(role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100") 0%
+    = submit_button form: f, id: "js-submit-button", kind: :upload, icon: :upload
+
+- else # local
+  - url = [[@__namespaces], @item, "images"].flatten.reject(&:blank?)
+  = simple_form_for [:admin, @image], url: url, html: { class: simple_form_classes("form-images js-form-upload"), id: "js-form-upload", multipart: true } do |f|
+    = render "admin/images/form", imageable: imageable, context: context, f: f
+    #js-upload-button.form-group
+      .form-field.form-field-label
+        %span.btn.btn-success.fileinput-button
+          %span#js-s3-fields Choisir le fichier…
+          = f.file_field :img
+    #js-files(style="display: none;")
+      .form-group
+        .form-field.form-field-label
+          .files
+          #js-progress-bar.progress(style="display: none;")
+            .progress-bar.progress-bar-success.progress-bar-stripped.active(role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100") 0%
+    = submit_button form: f, id: "js-submit-button", kind: :upload, icon: :upload
+
+    -#.well
+      %p.help-block2
+        Types de fichiers souhaités, par préférence décroissante&nbsp;: #{allowed_image_extensions}.&nbsp;
+        %strong En aucun cas du BMP.
+      %p.help-block2
+        La dimension minimale pour ne pas perdre en qualité au zoom doit être de&nbsp;
+        %strong#min-full-size= min_dims
+        &nbsp;pixels.
+

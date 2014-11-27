@@ -1,0 +1,27 @@
+- item = form.object
+= render "admin/shared/errors", item: item
+%fieldset.row
+  .col-xxs-12
+    %legend Informations générales
+  .col-md-6
+    = form.input :app_name, wrapper_html: { class: "size-m" }, autofocus: true
+    = form.input :company_name, wrapper_html: { class: "size-m" }
+    = form.input :baseline, as: :text, input_html: { rows: 2 }
+    = form.input :email_contact, wrapper_html: { class: "size-m" }
+  .col-md-6
+    = form.input :phone, wrapper_html: { class: "size-m" }
+    = form.input :fax, wrapper_html: { class: "size-m" }
+    = form.input :address, as: :text, input_html: { rows: 2 }
+%fieldset.row
+  .col-xxs-12
+    %legend Réseaux sociaux
+    - [:facebook, :twitter, :googleplus, :instagram, :pinterest].each do |network|
+      = form.input "#{network}_url".to_sym, wrapper_html: { class: "size-m" }
+  .col-xxs-12
+%fieldset.row
+  .col-xxs-12
+    %legend Maintenance
+  .col-xxs-12
+    = form.input :website_on_hold, wrapper: :inline_checkbox
+    = form.input :website_on_hold_description, input_html: { rows: 4, class: "tinymce" }
+

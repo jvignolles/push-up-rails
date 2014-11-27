@@ -1,0 +1,11 @@
+- unless defined?(scope); scope = nil; end
+- url = send([scope, resource_name, "password_path"].reject(&:blank?).join("_"))
+= simple_form_for resource, as: resource_name, url: url, method: "put", html: { class: simple_form_classes } do |f|
+  - if @page_heading.present?
+    %h1.heading= @page_heading
+  = render "admin/shared/errors", resource: resource
+  = f.hidden_field :reset_password_token
+  = f.input :password, label: "Nouveau mot de passe", required: true
+  = f.input :password_confirmation, label: "Confirmer le nouveau mot de passe", required: true
+  = submit_button f
+

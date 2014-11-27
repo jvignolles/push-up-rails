@@ -1,0 +1,226 @@
+// Variables
+$brand-primary:         #f21862 !default; // pink
+$brand-secondary:       #f65e91 !default;
+$brand-background:      #f3f0eb !default; // taupe
+//$brand-background:      #f7f8f9 !default; // gris clair
+
+#outlook a {
+  padding: 0;
+}
+body {
+  width: 100% !important;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+}
+.ReadMsgBody, .ExternalClass {
+  width: 100%;
+}
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+  line-height: 100%;
+}
+img {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+}
+.image_fix {
+  display: block;
+}
+table td {
+  border-collapse: collapse;
+}
+#backgroundTable {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+body, #backgroundTable, #templatePreheader {
+  background-color: $brand-background;
+}
+#templateContainer {
+  border: 1px solid #CCCCCC;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  display: block;
+  color: #222222 !important;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 100%;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  text-align: left;
+}
+h1, h2, h3, h4 {
+  color: $brand-primary !important;
+}
+h2, .h2{
+  font-size:24px;
+}
+h3, .h3 {
+  font-size: 20px;
+}
+h4, .h4 {
+  font-size: 16px;
+}
+p {
+  margin: 1em 0;
+}
+.pre {
+  font-family: "Courier New", Courier, "Lucida Console", monospace;
+  font-size: 14px;
+}
+.preheaderContent div {
+  color: #555555;
+  font-family: Arial;
+  font-size: 10px;
+  line-height: 100%;
+  text-align: left;
+}
+.preheaderDescription div {
+  color: #F8F8F8;
+}
+.preheaderPreview div {
+  text-align: right;
+}
+.preheaderContent div a:link, .preheaderContent div a:visited, .preheaderContent div a .yshortcuts {
+  color: $brand-primary;
+  font-weight: normal;
+  text-decoration: underline;
+}
+#templateHeader {
+  background-color: white;
+  border-bottom: 5px solid $brand-primary;
+}
+.headerContent {
+  color: #111111;
+  //background-color:  white;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 130%;
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+#headerImage {
+  font-size: 28px;
+}
+.baseline {
+  color: #666666;
+  font-weight: normal;
+  text-align: right;
+}
+.headerContent a:link, .headerContent a:visited, .headerContent a .yshortcuts {
+  color: $brand-primary;
+  font-weight: normal;
+  text-decoration: none;
+}
+.logo a:link, .logo a:visited, .logo a {
+  color: $brand-primary;
+}
+#headerImage {
+  height: auto;
+  max-width: 580px;
+}
+#templateContainer, .bodyContent {
+  background-color: #FFFFFF;
+}
+.bodyContent div {
+  color: #505050;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: left;
+}
+.bodyContent div a:link, .bodyContent div a:visited, .bodyContent div a .yshortcuts {
+  color: $brand-primary;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.bodyContent a:hover {
+  color: $brand-secondary !important;
+}
+.bodyContent img {
+  display: inline;
+  height: auto;
+}
+#templateSidebar {
+  background-color: #FFFFFF;
+  border-left: 0;
+}
+.sidebarContent div {
+  color: #505050;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: left;
+}
+.sidebarContent div a:link, .sidebarContent div a:visited, .sidebarContent div a .yshortcuts {
+  color: $brand-primary;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.sidebarContent img {
+  display: inline;
+  height: auto;
+}
+#templateFooter {
+  background-color: white;
+  border-top: 1px solid #DDDDDD;
+}
+.signature p {
+  margin-top: 0;
+}
+.signature span {
+  display: inline-block;
+  padding-top: 1em;
+  border-top: 1px solid #DDDDDD;
+}
+.footerContent div {
+  color: #888888;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 125%;
+  text-align: left;
+}
+.footerContent div a:link, .footerContent div a:visited, .footerContent div a .yshortcuts {
+  color: #888888;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.footerContent img {
+  display: inline;
+}
+#templateBody .button-wrapper {
+  text-align: center;
+}
+#templateBody .button, #templateBody .button:link, #templateBody .button:visited, #templateBody .yshortcuts {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px 20px;
+  background: $brand-primary;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 15px auto;
+}
+#templateBody .button:hover {
+  background-color: $brand-secondary;
+  color: white !important;
+}
+#utility {
+  border: 0;
+}
+#utility div {
+  text-align: center;
+}
+

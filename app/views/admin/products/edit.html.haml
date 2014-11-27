@@ -1,0 +1,32 @@
+- init_class_infos
+- content_for :sidebar do
+  = render "admin/shared/sidebar_tabs", tabs: @tabs
+  = render "search_form"
+
+- content_for :preview do
+  .col-sm-1.preview-wrapper
+    = link_to front_product_path, rel: "external", class: "preview-link", title: "Aperçu de l’élément" do
+      = icon "new-window"
+      -# preview(@item, send("#{@__model_name_singular}_preview_path", @items))
+
+.tab-content
+  - tab @tabs, :general do
+    - url = [[@__namespaces], @item].flatten.reject(&:blank?)
+    = simple_form_for url, html: { class: simple_form_classes } do |f|
+      = render f
+      = submit_button f
+
+  - tab @tabs, :images do
+    = render "admin/images/upload_tab", imageable: @item, copiable: true
+
+  - if @item.respond_to?(:seo_title)
+    - tab @tabs, :seo do
+      - url = [[@__namespaces], @item].flatten.reject(&:blank?)
+      = simple_form_for url, html: { class: simple_form_classes } do |f|
+        %fieldset
+          %legend Référencement
+          .help-block Cette partie est technique. Elle sert à améliorer votre visibilité sur les moteurs de recherche.
+          = f.input :seo_title, wrapper_html: { class: "size-l" }
+          = f.input :seo_description, as: :text, wrapper_html: { class: "size-l" }, input_html: { rows: 2 }
+          = f.input :seo_keywords, wrapper_html: { class: "size-l"}, input_html: { rows: 3 }
+          = submit_button f

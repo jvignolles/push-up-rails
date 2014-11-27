@@ -1,0 +1,36 @@
+%fieldset.disabled
+  %legend Demande de devis
+  .form-horizontal.form-regular.form-show
+    .form-group
+      %label.control-label Date
+      .form-field
+        .form-control= format_datetime(item.created_at)
+    .form-group
+      %label.control-label Nom
+      .form-field
+        .form-control= item.last_name
+    .form-group
+      %label.control-label Prénom
+      .form-field
+        .form-control= item.first_name
+    .form-group
+      %label.control-label E-mail
+      .form-field
+        .form-control= mail_to item.email
+    .form-group
+      %label.control-label Téléphone
+      .form-field
+        .form-control= item.phone
+    .form-group
+      %label.control-label Depuis la page
+      .form-field
+        .form-control
+          - if (p = item.product)
+            = link_to p.name, front_product_path(id: p), rel: "external"
+          - elsif item.from_path.present?
+            = link_to item.from_path, item.from_path, rel: "external"
+    .form-group
+      %label.control-label Message
+      .form-field
+        %textarea.form-control{ rows: "10", disabled: "disabled" }= item.description
+

@@ -1,0 +1,526 @@
+# encoding: utf-8
+# French translations for Ruby on Rails
+# by Christian Lescuyer (christian@flyingcoders.com)
+# contributors:
+#  - Sebastien Grosjean - ZenCocoon.com
+#  - Bruno Michel - http://github.com/nono
+#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
+# Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
+
+fr:
+  # can't use "yes" or "no" as key...
+  yes_const: "Oui"
+  no_const: "Non"
+
+  number:
+    format:
+      delimeter: "."
+      separator: ","
+
+  readable_time:
+    full: "%02dh%02d"
+    duration: "%0dh%02d"
+
+  will_paginate:
+    previous_label: "&laquo; Précédent"
+    next_label: "Suivant &raquo;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "Aucun résultat"
+        one:   "1 résultat"
+        other: "%{count} résultats"
+      single_page_html:
+        zero:  "Aucun résultat"
+        one:   "<strong>1</strong> résultat"
+        other: "<strong>%{count}</strong> résultats"
+      multi_page: "Résultats %{from} à %{to} sur %{count}"
+      multi_page_html: "Résultats <strong>%{from}&nbsp;à&nbsp;%{to}</strong> sur <strong>%{count}</strong>"
+
+  date:
+    am: "am"
+    abbr_day_names: [dim, lun, mar, mer, jeu, ven, sam]
+    abbr_month_names: [~, jan., fév., mar., avr., mai, juin, juil., août, sept., oct., nov., déc.]
+    day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+      long_ordinal: "%e %B %Y"
+      only_day: "%e"
+      short_search: "%d/%m"
+      full: "%A %e %B %Y"
+      export: "%Y-%m-%d"
+    month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+    order:
+      - :day
+      - :month
+      - :year
+    pm: "pm"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:   "environ une heure"
+        other: "environ %{count} heures"
+      about_x_months:
+        one:   "environ un mois"
+        other: "environ %{count} mois"
+      about_x_years:
+        one:   "environ un an"
+        other: "environ %{count} ans"
+      almost_x_years:
+        one:   "presqu’un an"
+        other: "presque %{count} ans"
+      half_a_minute: "une demi-minute"
+      less_than_x_minutes:
+        zero:  "moins d’une minute"
+        one:   "moins d’une minute"
+        other: "moins de %{count} minutes"
+      less_than_x_seconds:
+        zero:  "moins d’une seconde"
+        one:   "moins d’une seconde"
+        other: "moins de %{count} secondes"
+      over_x_years:
+        one:   "plus d’un an"
+        other: "plus de %{count} ans"
+      x_days:
+        one:   "1 jour"
+        other: "%{count} jours"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one:   "1 mois"
+        other: "%{count} mois"
+      x_seconds:
+        one:   "1 seconde"
+        other: "%{count} secondes"
+    prompts:
+      day:    "Jour"
+      hour:   "Heure"
+      minute: "Minute"
+      month:  "Mois"
+      second: "Seconde"
+      year:   "Année"
+  time:
+    am: "am"
+    formats:
+      default: "%d %B %Y %H:%M:%S"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      medium: "%d/%m/%Y à %H:%M"
+      long: "%A %d %B %Y %H:%M:%S %Z"
+      long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
+      only_second: "%S"
+      export: "%Y-%m-%d %H:%M:%S"
+    pm: "pm"
+  countries:
+    c_AD: 'Andorre'
+    c_AE: 'Émirats Arabes Unis'
+    c_AF: 'Afghanistan'
+    c_AG: 'Antigua-et-barbuda'
+    c_AI: 'Anguilla'
+    c_AL: 'Albanie'
+    c_AM: 'Arménie'
+    c_AN: 'Antilles néerlandaises'
+    c_AO: 'Angola'
+    c_AQ: 'Antarctique'
+    c_AR: 'Argentine'
+    c_AS: 'Samoa américaines'
+    c_AT: 'Autriche'
+    c_AU: 'Australie'
+    c_AW: 'Aruba'
+    c_AZ: 'Azerbaïdjan'
+    c_BA: 'Bosnie-Herzégovine'
+    c_BB: 'Barbade'
+    c_BD: 'Bangladesh'
+    c_BE: 'Belgique'
+    c_BF: 'Burkina faso'
+    c_BG: 'Bulgarie'
+    c_BH: 'Bahreïn'
+    c_BI: 'Burundi'
+    c_BJ: 'Bénin'
+    c_BM: 'Bermudes'
+    c_BN: 'Brunéi Darussalam'
+    c_BO: 'Bolivie'
+    c_BR: 'Brésil'
+    c_BS: 'Bahamas'
+    c_BT: 'Bhoutan'
+    c_BV: 'Île Bouvet' # 'Bouvet, île'
+    c_BW: 'Botswana'
+    c_BY: 'Bélarus'
+    c_BZ: 'Belize'
+    c_CA: 'Canada'
+    c_CC: 'Cocos, îles'
+    c_CD: 'République démocratique du Congo' # 'Congo, la république démocratique du'
+    c_CF: 'République Centrafricaine' # 'Centrafricaine, république'
+    c_CG: 'Congo'
+    c_CH: 'Suisse'
+    c_CI: 'Côte d’Ivoire'
+    c_CK: 'Îles Cook' # 'Cook, îles'
+    c_CL: 'Chili'
+    c_CM: 'Cameroun'
+    c_CN: 'Chine'
+    c_CO: 'Colombie'
+    c_CR: 'Costa Rica'
+    c_CS: 'Serbie-et-Monténégro'
+    c_CU: 'Cuba'
+    c_CV: 'Cap-Vert'
+    c_CX: 'Île Christmas' # 'Christmas, île'
+    c_CY: 'Chypre'
+    c_CZ: 'République Tchèque' # 'Tchèque, république'
+    c_DE: 'Allemagne'
+    c_DJ: 'Djibouti'
+    c_DK: 'Danemark'
+    c_DM: 'Dominique'
+    c_DO: 'République Dominicaine' # 'Dominicaine, république'
+    c_DZ: 'Algérie'
+    c_EC: 'Équateur'
+    c_EE: 'Estonie'
+    c_EG: 'Égypte'
+    c_EH: 'Sahara occidental'
+    c_ER: 'Érythrée'
+    c_ES: 'Espagne'
+    c_ET: 'Éthiopie'
+    c_FC: 'Corse'
+    c_FI: 'Finlande'
+    c_FJ: 'Fidji'
+    c_FK: 'Îles Malouines' # 'Falkland, îles (malvinas)'
+    c_FM: 'États fédérés de Micronésie' # 'Micronésie, états fédérés de'
+    c_FO: 'Îles Féroé' # 'Féroé, îles'
+    c_FR: 'France'
+    c_GA: 'Gabon'
+    c_GB: 'Royaume-uni'
+    c_GD: 'Grenade'
+    c_GE: 'Géorgie'
+    c_GF: 'Guyane française'
+    c_GH: 'Ghana'
+    c_GI: 'Gibraltar'
+    c_GL: 'Groenland'
+    c_GM: 'Gambie'
+    c_GN: 'Guinée'
+    c_GP: 'Guadeloupe'
+    c_GQ: 'Guinée équatoriale'
+    c_GR: 'Grèce'
+    c_GS: 'Géorgie du Sud et les Îles Sandwich du Sud'
+    c_GT: 'Guatemala'
+    c_GU: 'Guam'
+    c_GW: 'Guinée-Bissau'
+    c_GY: 'Guyana'
+    c_HK: 'Hong-kong'
+    c_HM: 'Île Heard et îles McDonald' # 'Heard, île et McDonald, îles'
+    c_HN: 'Honduras'
+    c_HR: 'Croatie'
+    c_HT: 'Haïti'
+    c_HU: 'Hongrie'
+    c_ID: 'Indonésie'
+    c_IE: 'Irlande'
+    c_IL: 'Israël'
+    c_IN: 'Inde'
+    c_IO: 'Territoire britanniques de l’Océan Indien' # 'Océan Indien, territoire britannique de l’'
+    c_IQ: 'Iraq'
+    c_IR: 'Iran' # 'République islamique d’Iran'
+    c_IS: 'Islande'
+    c_IT: 'Italie'
+    c_JM: 'Jamaïque'
+    c_JO: 'Jordanie'
+    c_JP: 'Japon'
+    c_KE: 'Kenya'
+    c_KG: 'Kirghizistan'
+    c_KH: 'Cambodge'
+    c_KI: 'Kiribati'
+    c_KM: 'Comores'
+    c_KN: 'Saint-Kitts-et-Nevis'
+    c_KP: 'République populaire démocratique de Corée' # 'Corée, république populaire démocratique de'
+    c_KR: 'République de Corée' # 'Corée, république de'
+    c_KW: 'Koweït'
+    c_KY: 'Îles Caïmanes' # 'Caïmanes, îles'
+    c_KZ: 'Kazakhstan'
+    c_LA: 'Laos' # 'République démocratique populaire du Laos'
+    c_LB: 'Liban'
+    c_LC: 'Sainte-Lucie'
+    c_LI: 'Liechtenstein'
+    c_LK: 'Sri Lanka'
+    c_LR: 'Libéria'
+    c_LS: 'Lesotho'
+    c_LT: 'Lituanie'
+    c_LU: 'Luxembourg'
+    c_LV: 'Lettonie'
+    c_LY: 'Jamahiriya arabe libyenne'
+    c_MA: 'Maroc'
+    c_MC: 'Monaco'
+    c_MD: 'République de Moldova'
+    c_MG: 'Madagascar'
+    c_MH: 'Îles Marshall' # 'Marshall, îles'
+    c_MK: 'Macédoine' # 'L’ex-république yougoslave de Macédoine'
+    c_ML: 'Mali'
+    c_MM: 'Birmanie' # 'Myanmar'
+    c_MN: 'Mongolie'
+    c_MO: 'Macao'
+    c_MP: 'Îles Mariannes du Nord' # 'Mariannes du Nord, îles'
+    c_MQ: 'Martinique'
+    c_MR: 'Mauritanie'
+    c_MS: 'Montserrat'
+    c_MT: 'Malte'
+    c_MU: 'Île Maurice'
+    c_MV: 'Maldives'
+    c_MW: 'Malawi'
+    c_MX: 'Mexique'
+    c_MY: 'Malaisie'
+    c_MZ: 'Mozambique'
+    c_NA: 'Namibie'
+    c_NC: 'Nouvelle-Calédonie'
+    c_NE: 'Niger'
+    c_NF: 'Île Norfolk' # 'Norfolk, île'
+    c_NG: 'Nigéria'
+    c_NI: 'Nicaragua'
+    c_NL: 'Pays-bas'
+    c_NO: 'Norvège'
+    c_NP: 'Népal'
+    c_NR: 'Nauru'
+    c_NU: 'Niué'
+    c_NZ: 'Nouvelle-Zélande'
+    c_OM: 'Oman'
+    c_PA: 'Panama'
+    c_PE: 'Pérou'
+    c_PF: 'Polynésie française'
+    c_PG: 'Papouasie-Nouvelle-Guinée'
+    c_PH: 'Philippines'
+    c_PK: 'Pakistan'
+    c_PL: 'Pologne'
+    c_PM: 'Saint-Pierre-et-Miquelon'
+    c_PN: 'Pitcairn'
+    c_PR: 'Porto Rico'
+    c_PS: 'Territoire palestinien occupé'
+    c_PT: 'Portugal'
+    c_PW: 'Palaos'
+    c_PY: 'Paraguay'
+    c_QA: 'Qatar'
+    c_RE: 'La Réunion'
+    c_RO: 'Roumanie'
+    c_RU: 'Russie' # 'Russie, fédération de'
+    c_RW: 'Rwanda'
+    c_SA: 'Arabie saoudite'
+    c_SB: 'Îles Salomon' # 'Salomon, îles'
+    c_SC: 'Seychelles'
+    c_SD: 'Soudan'
+    c_SE: 'Suède'
+    c_SG: 'Singapour'
+    c_SH: 'Sainte-Hélène'
+    c_SI: 'Slovénie'
+    c_SJ: 'Svalbard et île Jan Mayen'
+    c_SK: 'Slovaquie'
+    c_SL: 'Sierra Leone'
+    c_SM: 'Saint-Marin'
+    c_SN: 'Sénégal'
+    c_SO: 'Somalie'
+    c_SR: 'Suriname'
+    c_ST: 'Sao Tomé-et-Principe'
+    c_SV: 'El Salvador'
+    c_SY: 'République Arabe Syrienne' # 'Syrienne, république arabe'
+    c_SZ: 'Swaziland'
+    c_TC: 'Îles Turks et Caïques' # 'Turks et Caïques, îles'
+    c_TD: 'Tchad'
+    c_TF: 'Terres australes françaises'
+    c_TG: 'Togo'
+    c_TH: 'Thaïlande'
+    c_TJ: 'Tadjikistan'
+    c_TK: 'Tokelau'
+    c_TL: 'Timor-Leste'
+    c_TM: 'Turkménistan'
+    c_TN: 'Tunisie'
+    c_TO: 'Tonga'
+    c_TR: 'Turquie'
+    c_TT: 'Trinité-et-Tobago'
+    c_TV: 'Tuvalu'
+    c_TW: 'Taïwan' # 'Taïwan, province de chine'
+    c_TZ: 'Tanzanie' # 'Tanzanie, république-unie de'
+    c_UA: 'Ukraine'
+    c_UG: 'Ouganda'
+    c_UM: 'Iles mineures éloignées des États-Unis'
+    c_US: 'États-Unis'
+    c_UY: 'Uruguay'
+    c_UZ: 'Ouzbékistan'
+    c_VA: 'Vatican' # 'Saint-Siège (État de la cité du Vatican)'
+    c_VC: 'Saint-Vincent-et-les Grenadines'
+    c_VE: 'Venezuela'
+    c_VG: 'Iles Vierges britanniques'
+    c_VI: 'Iles Vierges des États-Unis'
+    c_VN: 'Viêt Nam'
+    c_VU: 'Vanuatu'
+    c_WF: 'Wallis et Futuna'
+    c_WS: 'Samoa'
+    c_YE: 'Yémen'
+    c_YT: 'Mayotte'
+    c_ZA: 'Afrique du Sud'
+    c_ZM: 'Zambie'
+    c_ZW: 'Zimbabwe'
+  errors: &errors
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      accepted: "doit être accepté(e)"
+      blank: "doit être rempli(e)"
+      present: "doit être vide"
+      confirmation: "ne concorde pas"
+      empty: "doit être rempli(e)"
+      equal_to: "doit être égal à %{count}"
+      even: "doit être pair"
+      exclusion: "n’est pas disponible"
+      greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+      inclusion: "n’est pas inclus(e) dans la liste"
+      invalid: "n’est pas valide"
+      less_than: "doit être inférieur à %{count}"
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+      not_a_number: "n’est pas un nombre"
+      not_an_integer: "doit être un nombre entier"
+      odd: "doit être impair"
+      record_invalid: "La validation a échoué : %{errors}"
+      restrict_dependent_destroy:
+        one: "Suppression impossible: un autre enregistrement est lié"
+        many: "Suppression impossible: d’autres enregistrements sont liés"
+      taken: "n’est pas disponible"
+      too_long:
+        one: "est trop long (pas plus d’un caractère)"
+        other: "est trop long (pas plus de %{count} caractères)"
+      too_short:
+        one: "est trop court (au moins un caractère)"
+        other: "est trop court (au moins %{count} caractères)"
+      wrong_length:
+        one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
+        other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      other_than: "doit être différent de %{count}"
+    template: &errors_template
+      body: "Veuillez vérifier les champs suivants : "
+      header:
+        one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
+        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+  helpers:
+    select:
+      prompt: "Veuillez sélectionner"
+    submit:
+      create: "Créer un(e) %{model}"
+      submit: "Enregistrer ce(tte) %{model}"
+      update: "Modifier ce(tte) %{model}"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: "milliard"
+          million: "million"
+          quadrillion: "million de milliards"
+          thousand: "millier"
+          trillion: "billion"
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "octet"
+            other: "octets"
+          gb: "Go"
+          kb: "ko"
+          mb: "Mo"
+          tb: "To"
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+    models:
+      defaults:
+        one: "élément"
+        other: "éléments"
+      admin:
+        one: "administrateur"
+        other: "administrateurs"
+      banner:
+        one: "bannière"
+        other: "bannières"
+      contact:
+        one: "contact"
+        other: "contacts"
+      country:
+        one: "pays"
+        other: "pays"
+      editorial:
+        one: "éditorial"
+        other: "éditoriaux"
+      highlight:
+        one: "mise en avant"
+        other: "mises en avant"
+      location:
+        one: "lieu"
+        other: "lieux"
+      product:
+        one: "voyage"
+        other: "voyages"
+      quotation:
+        one: "devis"
+        other: "devis"
+      subscription:
+        one: "inscription newsletter"
+        other: "inscriptions newsletter"
+      tag:
+        one: "thème"
+        other: "thèmes"
+      team_member:
+        one: "membre de l’équipe"
+        other: "membres de l’équipe"
+  civilities:
+    mr:
+      short: "M."
+      long: "Monsieur"
+    mrs:
+      short: "Mme"
+      long: "Madame"
+    miss:
+      short: "Mlle"
+      long: "Mademoiselle"
+  editorials:
+    names:
+      homepage: "Accueil"
+      team_members: "L’équipe"
+      contact: "Contact"
+      legal_info: "Mentions légales"
+      privacy_policy: "Vie privée"
+      terms_of_use: "Conditions Générales d’Utilisation"
+      who_we_are: "Qui sommes-nous ?"
+      commitments: "Nos engagements"
+      warranties: "Garanties"
+

@@ -1,0 +1,28 @@
+- context ||= image_context(imageable)
+- images ||= context[:allows_many_images] ? imageable.images : [imageable.image].compact
+- images.each do |image|
+  - highlighted = context[:has_highlighted_image] && imageable.highlighted_image_id == image.id
+  %li.thumbnail.js-thumbnail{ id: "image_#{image.id}", class: highlighted ? :highlighted : nil, data: image_data(image) }
+    %div
+      - kind_label = context[:has_kinds] ? context[:base_kinds][image.kind.to_sym] : ""
+      %p.mover{ rel: :tooltip, title: "Déplacer cette image dans la liste", data: { placement: :bottom } }= kind_label
+      = link_to image.public_filename(:prefull), title: image.legend, rel: "group", class: "image-link custom-lightbox" do
+        = image_tag image.img.medium.url, alt: "", class: "image-img"
+      .bottom.clearfix
+        - if context[:has_kinds]
+          .kind-info.muted= trunc(context[:base_kinds][image.kind], 25)
+        .actions
+          - if context[:has_attributes]
+            = link_to icon("pencil"), "#", class: "edit", rel: :tooltip, title: "Modifier les attributs de cette image", data: { placement: :bottom }
+          -#- if context[:has_highlighted_image]
+            = link_to icon(highlighted ? "star" : "star-empty"), "images/#{image.id}/highlight", method: :put, remote: true, rel: :tooltip, title: "Utiliser (ou non) cette image au survol", data: { placement: :bottom }
+          = link_to icon("fullscreen"), "images/#{image.id}/assist", rel: :tooltip, title: "Recadrer/entourer cette image", data: { placement: :bottom }
+          -#- if context[:copiable]
+            = link_to icon("share"), "images/#{image.id}/copy", method: :put, rel: :tooltip, title: "Copier cette image", class: "copy-toggler", data: { placement: :bottom }
+          -# url = [[@__namespaces], @item, image].flatten.reject(&:blank?)
+          - url = "images/#{image.id}"
+          = link_to icon("trash"), url, method: :delete, rel: :tooltip, title: "Supprimer cette image", data2: { confirm: "Supprimer définitivement cette image ?", placement: :bottom }, class: "js-image-deleter"
+
+:javascript
+  $('#image-count').text('#{pluralize(images.size, "image")}');
+

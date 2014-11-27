@@ -1,0 +1,30 @@
+# encoding: utf-8
+en:
+  activerecord:
+    errors:
+      templates:
+        header:
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+        body: "there were problems with the following fields:"
+      messages:
+        accepted: "must be accepted"
+        blank: "can't be blank"
+        confirmation: "doesn't match confirmation"
+        empty: "can't be empty"
+        equal_to: "must be equal to %{count}"
+        even: "must be even"
+        exclusion: "is reserved"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        inclusion: "is not included in the list"
+        invalid: "is invalid"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        not_a_number: "is not a number"
+        odd: "must be odd"
+        taken: "is already taken"
+        too_long: "is too long (maximum is %{count} characters)"
+        too_short: "is too short (minimum is %{count} characters)"
+        wrong_length: "is the wrong length (should be %{count} characters)"
+

@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+.product-item-wrapper {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 1em;
+  background-color: $brand-grey;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.form-horizontal .product-item-content .form-group {
+  margin-bottom: 5px;
+}
+.product-item-content {
+  .special-group {
+    margin-top: 1em;
+    text-align: right;
+    .form-field {
+      width: 100%;
+    }
+  }
+}
+.righted-button .btn {
+  margin-right: em(15px);
+}
+#tab-locations {
+  .form-group.boolean {
+    label {
+      font-weight: normal;
+      float: left;
+    }
+  }
+}
+

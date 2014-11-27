@@ -1,0 +1,8 @@
+Capfile
+/db/seeds/cities
+/doc
+/lib/capistrano
+/lib/tasks
+/script/import
+/spec
+/test

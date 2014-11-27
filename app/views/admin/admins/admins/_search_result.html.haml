@@ -1,0 +1,57 @@
+- unless defined?(:deleters)
+  - deleters = false
+- init_class_infos
+- if items.present?
+  - some_item = items.first
+  - has_active = some_item.respond_to?(:active)
+  - has_images = some_item.respond_to?(:images) || some_item.respond_to?(:image)
+  - display_all_images = false
+  %table.listing.table.table-striped.table-hover.parent-lightbox
+    %thead
+      %tr
+        %th.col-sm-1 Actions
+        - if has_images
+          %th.col-sm-2 Image
+        -#%th.col-sm-1 ID
+        %th Prénom
+        %th Nom
+        %th E-mail
+        - if deleters
+          %th.col-sm-1
+            %abbr{ title: "Supprimer" } Suppr.
+    %tbody
+      - items.each do |item|
+        - url = "edit_#{@__namespaces_}#{@__model_name_singular}_path"
+        - url = "#{@__namespaces_}#{@__model_name_singular}_path" unless self.respond_to?(url)
+        - edit_url = send(url, { id: item.id })
+        - edit_label = "Éditer"
+        - classes = []
+        - classes << "inactive" if has_active && !item.active
+        %tr{ class: classes }
+          %td.buttons-group
+            .btn-group
+              - if can? :update, item
+                = link_to_icon "edit", edit_url, title: edit_label
+          - if has_images
+            %td.link.image
+              - (display_all_images ? item.images : [item.images.first]).compact.each do |image|
+                = link_to image.img.prefull.url, class: "image-link custom-lightbox", rel: "group", title: item.name do
+                  = image_tag image.img.small.url, alt: "", title: item.name, class: "image-link-img"
+          -#%td.link= link_to "##{item.id}", edit_url
+          %td.link
+            - if can? :update, item
+              = link_to item.first_name, edit_url
+            - else
+              = item.first_name
+          %td.link
+            - if can? :update, item
+              = link_to item.last_name, edit_url
+            - else
+              = item.last_name
+          %td.link.link-ext= mail_to(item.email, item.full_name)
+          - if deleters
+            %td.buttons-group
+              .btn-group
+                - if item.id != current_admin.id
+                  = delete_link send("#{@__namespaces_}#{@__model_name_singular}_path", { id: item.id }), item.name
+

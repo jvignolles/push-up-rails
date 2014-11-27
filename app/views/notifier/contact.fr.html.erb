@@ -1,0 +1,14 @@
+<% contact = @email_info[:contact] %>
+<p>
+  <strong>Nom :</strong>
+  <%= contact.name %>
+  <br />
+  <strong>E-mail :</strong>
+  <%= mail_to(contact.email, contact.email) %>
+</p>
+<p>
+  <strong>Message :</strong>
+  <br />
+  <%= raw strip_tags(contact.description).gsub("\n", '<br />') %>
+</p>
+

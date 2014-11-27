@@ -1,0 +1,49 @@
+- unless defined?(:deleters)
+  - deleters = false
+- init_class_infos
+- if items.present?
+  - some_item = items.first
+  - has_active = some_item.respond_to?(:active)
+  - has_images = some_item.respond_to?(:images) || some_item.respond_to?(:image)
+  - display_all_images = false
+  %table.listing.table.table-striped.table-hover.parent-lightbox
+    %thead
+      %tr
+        %th.col-sm-1 Actions
+        - if has_images
+          %th.col-sm-2 Image
+        -#%th.col-sm-1 ID
+        %th Nom
+        %th.col-sm-1 E-mail
+        -#%th Objet
+        %th.col-sm-1 Créé le
+        - if deleters
+          %th.col-sm-1
+            %abbr{ title: "Supprimer" } Suppr.
+    %tbody
+      - items.each do |item|
+        - url = "edit_#{@__namespaces_}#{@__model_name_singular}_path"
+        - url = "#{@__namespaces_}#{@__model_name_singular}_path" unless self.respond_to?(url)
+        - edit_url = send(url, { id: item.id })
+        - edit_label = "Éditer"
+        - classes = []
+        - classes << "inactive" if has_active && !item.active
+        %tr{ class: classes }
+          %td.buttons-group
+            .btn-group
+              = link_to_icon "edit", edit_url, title: edit_label
+          - if has_images
+            %td.link.image
+              - (display_all_images ? item.images : [item.images.first]).compact.each do |image|
+                = link_to image.img.prefull.url, class: "image-link custom-lightbox", rel: "group", title: item.name do
+                  = image_tag image.img.small.url, alt: "", title: item.name, class: "image-link-img"
+          -#%td.link= link_to "##{item.id}", edit_url
+          %td.link= link_to trunc(item.name), edit_url
+          %td.link.link-ext= mail_to item.email, item.name
+          -#%td.link= link_to trunc(item.subject, 40), edit_url
+          %td.link= link_to format_datetime(item.created_at), edit_url
+          - if deleters
+            %td.buttons-group
+              .btn-group
+                = delete_link send("#{@__namespaces_}#{@__model_name_singular}_path", { id: item.id }), item.name
+

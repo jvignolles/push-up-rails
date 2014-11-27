@@ -1,0 +1,327 @@
+GIT
+  remote: git@github.com:jvignolles/jquery-fileupload-rails.git
+  revision: 4ec122b9fac3ca41529c5b63eb256ad3a48b3678
+  specs:
+    jquery-fileupload-rails (0.4.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionmailer (4.1.7)
+      actionpack (= 4.1.7)
+      actionview (= 4.1.7)
+      mail (~> 2.5, >= 2.5.4)
+    actionpack (4.1.7)
+      actionview (= 4.1.7)
+      activesupport (= 4.1.7)
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+    actionview (4.1.7)
+      activesupport (= 4.1.7)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+    activemodel (4.1.7)
+      activesupport (= 4.1.7)
+      builder (~> 3.1)
+    activerecord (4.1.7)
+      activemodel (= 4.1.7)
+      activesupport (= 4.1.7)
+      arel (~> 5.0.0)
+    activesupport (4.1.7)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    addressable (2.3.6)
+    arel (5.0.1.20140414130214)
+    bcrypt (3.1.9)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    bootstrap-will_paginate (0.0.9)
+      will_paginate
+    bourbon (3.1.1)
+      sass (>= 3.2.0)
+      thor
+    builder (3.2.2)
+    cancan (1.6.10)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    carrierwave_direct (0.0.14)
+      carrierwave
+      fog
+      uuidtools
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
+    coderay (1.1.0)
+    coffee-rails (4.1.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.3.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.8.0)
+    connection_pool (2.1.0)
+    css_parser (1.3.5)
+      addressable
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+    dynamic_form (1.1.4)
+    erubis (2.7.0)
+    escape_utils (1.0.1)
+    exception_notification (4.0.1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
+    excon (0.41.0)
+    execjs (2.2.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
+    fog (1.22.1)
+      fog-brightbox
+      fog-core (~> 1.22)
+      fog-json
+      ipaddress (~> 0.5)
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.6.1)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto
+    fog-core (1.25.0)
+      builder
+      excon (~> 0.38)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.0)
+      multi_json (~> 1.0)
+    formatador (0.2.5)
+    geocoder (1.2.6)
+    haml (4.0.5)
+      tilt
+    haml-rails (0.5.3)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 3.1, < 5.0)
+      railties (>= 4.0.1)
+    heroku-deflater (0.5.3)
+      rack (>= 1.4.5)
+    hike (1.2.3)
+    hitimes (1.2.2)
+    htmlentities (4.3.2)
+    i18n (0.6.11)
+    inflecto (0.0.2)
+    ipaddress (0.8.0)
+    jbuilder (2.2.5)
+      activesupport (>= 3.0.0, < 5)
+      multi_json (~> 1.2)
+    jcrop-rails-v2 (0.9.12.3)
+    jquery-rails (3.1.2)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.2)
+      railties (>= 3.2.16)
+    json (1.8.1)
+    levenshtein (0.2.2)
+    libv8 (3.16.14.7)
+    magnific-popup-rails (0.9.9)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mailjet (0.0.5)
+      activesupport (>= 3.1.0)
+      rack (>= 1.4.0)
+    mime-types (2.4.3)
+    mini_magick (3.8.1)
+      subexec (~> 0.2.1)
+    mini_portile (0.6.1)
+    minitest (5.4.3)
+    multi_json (1.10.1)
+    mysql (2.9.1)
+    mysql2 (0.3.17)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
+    newrelic_rpm (3.9.7.266)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
+    notifyjs_rails (0.0.2)
+    orm_adapter (0.5.0)
+    premailer (1.8.2)
+      css_parser (>= 1.3.5)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.8.0)
+      actionmailer (>= 3, < 5)
+      premailer (~> 1.7, >= 1.7.9)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    rack-rewrite (1.5.0)
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rails (4.1.7)
+      actionmailer (= 4.1.7)
+      actionpack (= 4.1.7)
+      actionview (= 4.1.7)
+      activemodel (= 4.1.7)
+      activerecord (= 4.1.7)
+      activesupport (= 4.1.7)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.1.7)
+      sprockets-rails (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
+    railties (4.1.7)
+      actionpack (= 4.1.7)
+      activesupport (= 4.1.7)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rake (10.4.0)
+    rdoc (4.1.2)
+      json (~> 1.4)
+    redis (3.1.0)
+    redis-namespace (1.5.1)
+      redis (~> 3.0, >= 3.0.4)
+    ref (1.0.5)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
+    route_translator (3.2.4)
+    sass (3.2.19)
+    sass-rails (4.0.5)
+      railties (>= 4.0.0, < 5.0)
+      sass (~> 3.2.2)
+      sprockets (~> 2.8, < 3.0)
+      sprockets-rails (~> 2.0)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    select2-rails (3.5.9.1)
+      thor (~> 0.14)
+    sextant (0.2.4)
+      rails (>= 3.2)
+    sidekiq (2.17.7)
+      celluloid (>= 0.15.2)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
+    sidekiq-lock (0.2.0)
+      redis (>= 3.0.5)
+      sidekiq (>= 2.14.0)
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    spring (1.2.0)
+    sprockets (2.12.3)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-rails (2.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (>= 2.8, < 4.0)
+    subexec (0.2.3)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
+    thor (0.19.1)
+    thread_safe (0.3.4)
+    tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
+    tinymce-rails (4.1.6)
+      railties (>= 3.1.1)
+    tinymce-rails-langs (4.20140129)
+      tinymce-rails (~> 4.0)
+    turbolinks (2.5.2)
+      coffee-rails
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    unicode_utils (1.4.0)
+    uuidtools (2.1.5)
+    warden (1.2.3)
+      rack (>= 1.0)
+    will_paginate (3.0.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  better_errors
+  bootstrap-will_paginate (= 0.0.9)
+  bourbon (= 3.1.1)
+  cancan
+  carrierwave (~> 0.10.0)
+  carrierwave_direct
+  devise
+  dynamic_form
+  escape_utils
+  exception_notification
+  figaro (~> 0.7.0)
+  fog (= 1.22.1)
+  geocoder
+  haml-rails
+  heroku-deflater
+  htmlentities
+  jbuilder (~> 2.0)
+  jcrop-rails-v2
+  jquery-fileupload-rails!
+  jquery-rails
+  jquery-ui-rails
+  levenshtein
+  magnific-popup-rails
+  mailjet (= 0.0.5)
+  mime-types
+  mini_magick (~> 3.4)
+  mysql (= 2.9.1)
+  mysql2 (>= 0.3.13)
+  newrelic_rpm
+  nokogiri
+  notifyjs_rails
+  premailer-rails
+  quiet_assets
+  rack-rewrite (~> 1.5.0)
+  rails (= 4.1.7)
+  rails_12factor
+  route_translator
+  sass-rails (~> 4.0.3)
+  sdoc (~> 0.4.0)
+  select2-rails
+  sextant
+  sidekiq (= 2.17.7)
+  sidekiq-lock (~> 0.2.0)
+  simple_form
+  sinatra
+  spring
+  therubyracer
+  tinymce-rails
+  tinymce-rails-langs
+  turbolinks
+  uglifier (>= 1.3.0)
+  unicode_utils
+  will_paginate (= 3.0.4)

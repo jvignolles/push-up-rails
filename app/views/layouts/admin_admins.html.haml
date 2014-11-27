@@ -1,0 +1,10 @@
+= inside_layout "admin" do
+  #main.user-devise-box
+    .container.container1
+      .row
+        = render "admin/admins/shared/devise_links"
+        .col-sm-8
+          = render "admin/shared/flashes"
+          = yield
+  = render "admin/shared/footer"
+

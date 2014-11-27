@@ -1,0 +1,29 @@
+# encoding: utf-8
+fr:
+  routes:
+    #=== Restful
+    new: nouveau
+    edit: modifier
+    #=== Devise
+    sign_in: connexion
+    sign_out: deconnexion
+    sign_up: inscription
+    #=== users
+    user: compte
+    users: comptes
+    team_members: l-equipe
+    #=== Models
+    products: produits
+    editorials: informations
+    quotation: demande-de-devis
+    quotations: demandes-de-devis
+    subscription: inscription
+    subscriptions: inscriptions
+    #=== Editorials
+    legal-info: mentions-legales
+    privacy-policy: vie-privee
+    terms-of-use: conditions-generales-d-utilisation
+    who-we-are: qui-sommes-nous
+    commitments: nos-engagements
+    warranties: garanties
+

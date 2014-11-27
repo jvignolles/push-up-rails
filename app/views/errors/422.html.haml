@@ -1,0 +1,11 @@
+.container.error-page
+  .row
+    .col-sm-4.icon-error.icon-422
+      %span.wrapper !
+    .col-sm-8
+      %h1.heading Oops… Une erreur est survenue !
+      %p C’est ennuyeux : nous n’avons pas pu traiter votre demande.
+      %p Si le problème persiste, nous vous invitons à nous en faire part pour trouver une solution.
+      %p.button
+        = link_to "Revenir à l’accueil", front_home_path, class: "btn btn-large btn-primary"
+

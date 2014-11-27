@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/assets/opensans/OpenSans-Regular-webfont.eot');
+  src: url('/assets/opensans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+     url('/assets/opensans/OpenSans-Regular-webfont.woff') format('woff'),
+     url('/assets/opensans/OpenSans-Regular-webfont.ttf') format('truetype'),
+     url('/assets/opensans/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 87.5%; // 14px, adjusts $body-font-size
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #111;
+}
+p { margin: 0; }
+a {
+  text-decoration: none;
+  @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out);
+}
+a:hover { text-decoration: none; }
+ul, ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-header {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn .glyphicon {
+  margin-left: 0.5em;
+}
+
+.btn-default {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: white;
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
+  }
+}
+
+.navbar {
+  border-radius: 0;
+  border: none;
+  margin-bottom: 0;
+  min-height: em(30px);
+  background-color: white;
+  //background-color: $brand-primary;
+}
+.navbar-nav {
+  margin: 0;
+}
+.navbar-nav .navbar-nav-a {
+  padding-top: em(5px);
+  padding-bottom: em(5px);
+}
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: em(18px);
+  line-height: em(50px, 18px);
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  background-color: #181818;
+}
+.navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
+.btn {
+  @include transition (all .2s ease-in-out);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  background-color: $brand-secondary;
+}
+.breadcrumb {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.form-horizontal.form-with-alerts {
+  .form-group {
+    @extend .alert;
+    padding: 0;
+    margin: 0 0 em(15px);
+  /*
+    @media (min-width: $screen-xs-min) {
+      .control-label {
+        padding-left: 0;
+      }
+    }
+  */
+  }
+  .has-error {
+    @extend .alert-danger;
+    @media (min-width: $screen-xs-min) {
+      padding: em(10px) 0;
+      .help-block {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+

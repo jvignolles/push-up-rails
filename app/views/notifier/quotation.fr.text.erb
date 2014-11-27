@@ -1,0 +1,11 @@
+<%- quotation = @email_info[:quotation] -%>
+Nom :            <%= quotation.last_name %>
+Prénom :         <%= quotation.first_name %>
+E-mail :         <%= quotation.email %>
+Téléphone :      <%= quotation.phone %>
+Depuis la page : <%= (p = quotation.product) ? front_product_url(id: p) : quotation.from_url %>
+Message :
+----------------------------------------
+<%= raw strip_tags(quotation.description) %>
+----------------------------------------
+

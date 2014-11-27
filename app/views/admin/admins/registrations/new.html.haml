@@ -1,0 +1,18 @@
+- unless defined?(scope); scope = nil; end
+- url = send([scope, resource_name, "registration_path"].reject(&:blank?).join("_"))
+= simple_form_for resource, as: resource_name, url: url, html: { class: simple_form_classes } do |f|
+  - if @page_heading.present?
+    %h1.heading= @page_heading
+  = render "admin/shared/errors", resource: resource
+  = f.input :civility, as: :radio_buttons, collection: civility_map, item_wrapper_class: "inline", required: true
+  = f.input :first_name, wrapper_html: { class: "size-m" }
+  = f.input :last_name, wrapper_html: { class: "size-m" }
+  = f.input :email, required: true
+  = f.input :mobile, wrapper_html: { class: "size-s" }
+  -#- v = (params[resource_name] || {})[:password]
+  -#= f.input :password, required: true, wrapper_html: { class: "size-s" }, input_html: { value: v }
+  -#- v = (params[resource_name] || {})[:password_confirmation]
+  -#= f.input :password_confirmation, required: true, wrapper_html: { class: "size-s" }, input_html: { value: v }
+  = f.input :terms_of_service, as: :boolean, wrapper: :inline_checkbox, label: false, inline_label: t("simple_form.labels.defaults.terms_of_service"), required: true
+  = submit_button f
+
