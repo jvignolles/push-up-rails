@@ -1,27 +1,12 @@
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/assets/opensans/OpenSans-Regular-webfont.eot');
-  src: url('/assets/opensans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-     url('/assets/opensans/OpenSans-Regular-webfont.woff') format('woff'),
-     url('/assets/opensans/OpenSans-Regular-webfont.ttf') format('truetype'),
-     url('/assets/opensans/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   font-size: 100%;
 }
 body {
   font-size: 87.5%; // 14px, adjusts $body-font-size
-  font-family: 'Open Sans', Arial, sans-serif;
   color: #111;
 }
 p { margin: 0; }
-a {
-  text-decoration: none;
-  @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out);
-}
+a { text-decoration: none; }
 a:hover { text-decoration: none; }
 ul, ol {
   list-style-type: none;
