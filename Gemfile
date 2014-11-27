@@ -86,7 +86,7 @@ gem 'select2-rails'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'magnific-popup-rails'
-gem 'jquery-fileupload-rails', git: 'git@github.com:jvignolles/jquery-fileupload-rails.git'
+gem 'jquery-fileupload-rails', github: 'jvignolles/jquery-fileupload-rails.git'
 gem 'notifyjs_rails'
 
 
