@@ -10,7 +10,6 @@ old
 /config/application.yml
 /config/database.yml
 /config/initializers/secret_token.rb
-/config/secrets.yml
 /config/sidekiq.yml
 /db/*.sqlite3
 /db/*.sqlite3-journal
