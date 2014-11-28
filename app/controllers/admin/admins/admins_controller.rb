@@ -2,8 +2,7 @@ class Admin::Admins::AdminsController < Admin::BaseController
   include AdminActions # See /app/concerns/admin_actions.rb
 
   def update
-    p = params[model_name.tableize.singularize.to_sym] || {}
-    @item.attributes = p
+    @item.attributes = strong_params_hash
     changed_password = @item.password.present?
     if @item.save
       sign_in(@item, bypass: true) if changed_password && current_admin.id == @item.id
@@ -12,5 +11,10 @@ class Admin::Admins::AdminsController < Admin::BaseController
     end
     init_view
     render :edit
+  end
+
+private
+  def strong_params
+    %w(active civility first_name last_name phone_home phone_mobile phone_work email admin password password_confirmation)
   end
 end
