@@ -3,7 +3,7 @@ module Admin::ImagesHelper
     # JPG is just a tech variant of JPEG, also present.
     (ImageUploader.new.extension_white_list.map(&:upcase) - ['JPG']).to_sentence
   end
-  
+
   def image_data(img)
     img.attributes.slice('id', 'legend', 'zoomable', 'kind')
   end

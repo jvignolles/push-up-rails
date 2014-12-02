@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   IMAGE_KINDS = {
     :preview => "Mosaïque (vignette)",
     :panorama => "Mosaïque (panorama, un seul requis)",
-  }.freeze
+  }
   IMAGE_LEGENDABLE = true
 
   acts_as_clean_html :resume, :description
@@ -10,7 +10,7 @@ class Product < ActiveRecord::Base
   reorderable
   slug :name
   strip_fields :name, :duration, :price, :resume, :description, :seo_title, :seo_h1, :seo_description, :seo_keywords
-  
+
   #=== Validations
   validates :name, presence: true, maxlength_auto: true
 
@@ -24,7 +24,7 @@ class Product < ActiveRecord::Base
   scope :active,       -> { where(active: true) }
   scope :alphabetical, -> { order("products.name, products.id") }
   scope :highlighted,  -> { where(highlight: true) }
-  scope :adm_for_text, ->(opts) { 
+  scope :adm_for_text, ->(opts) {
     words = opts && opts.scan(/\w+/)
     next where(nil) if words.blank?
     conditions = ["true"]

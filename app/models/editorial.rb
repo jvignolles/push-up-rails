@@ -11,7 +11,7 @@ class Editorial < ActiveRecord::Base
   }
   #IMAGE_KINDS = {
   #  :preview => "Bannière",
-  #}.freeze
+  #}
   #IMAGE_LEGENDABLE = true
 
   acts_as_clean_html :text1, :text2, :text3
@@ -40,7 +40,7 @@ class Editorial < ActiveRecord::Base
   scope :active,          -> { where(active: true) }
   scope :alphabetical,    -> { order("editorials.name, editorials.id") }
   scope :in_lateral_menu, -> { where(in_lateral_menu: true) }
-  scope :adm_for_text, ->(opts) { 
+  scope :adm_for_text, ->(opts) {
     words = opts && opts.scan(/\w+/)
     next where(nil) if words.blank?
     conditions = ["true"]

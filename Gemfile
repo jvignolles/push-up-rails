@@ -31,6 +31,7 @@ gem 'unicode_utils'
 gem 'escape_utils'
 gem 'levenshtein'
 gem 'htmlentities'
+gem 'random_record'
 
 # Forms
 gem 'dynamic_form'

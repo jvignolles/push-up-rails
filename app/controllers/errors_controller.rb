@@ -12,7 +12,7 @@ class ErrorsController < ApplicationController
     @breadcrumbs = [{ key: :home, name: "Accueil", url: front_home_path }]
     render status_code.to_s, :status => status_code
   end
- 
+
 protected
   def status_code
     params[:code] || 500

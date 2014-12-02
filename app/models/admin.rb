@@ -44,7 +44,7 @@ class Admin < ActiveRecord::Base
   scope :active,       -> { where(active: true) }
   scope :alphabetical, -> { order("admins.first_name, admins.last_name, admins.id") }
   scope :ordered,      -> { order("admins.created_at desc, admins.id desc") }
-  scope :adm_for_text, ->(opts) { 
+  scope :adm_for_text, ->(opts) {
     words = opts && opts.scan(/\w+/)
     next where(nil) if words.blank?
     conditions = ["true"]
@@ -85,7 +85,7 @@ class Admin < ActiveRecord::Base
   def name
     civil_name
   end
-  
+
   def short_name
     "#{first_name} #{last_name.first}."
   end

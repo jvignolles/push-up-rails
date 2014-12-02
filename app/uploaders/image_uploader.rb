@@ -37,12 +37,12 @@ class ImageUploader < CarrierWave::Uploader::Base
       "#{STORAGE_ROOT}/#{model.imageable_type.tableize}"
     end
   end
- 
+
   def cache_dir
     # On Heroku, only /tmp is writable (care of concurrency!), so…
     Rails.root.join "tmp/uploads"
   end
- 
+
   # Strip profiles and comments (custom command, see initializer)
   strip
 

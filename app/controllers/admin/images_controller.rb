@@ -170,6 +170,6 @@ private
   def strong_params
     params.require(:image).permit(%(imageable kind legend zoomable assisted img))
   end
-  
+
   helper_method :parent_url
 end

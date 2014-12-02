@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   IMAGE_KINDS = {
     :profile => "Profil",
-  }.freeze
+  }
 
   devise :database_authenticatable,
          :confirmable,
@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
   def name
     civil_name
   end
-  
+
   def short_name
     "#{first_name} #{last_name.first}."
   end

@@ -26,7 +26,7 @@ require 'tempfile'
 # the proper version path as per `ImageUploader#fullsize_version`.
 class Image < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
-  
+
   unless defined?(@@__copying)
     @@__copying = false # HACK
   end
@@ -49,7 +49,7 @@ class Image < ActiveRecord::Base
 
   # Assisted images were interactively cropped or surrounded.
   scope :assisted, -> { where(assisted: true) }
-  
+
   # Some images are single-locale; this scope only uses locale-agnostic and passed-locale-specific
   # images, ignoring those specific to another locale.  If no locale is passed, the current locale
   # is used.
@@ -214,7 +214,7 @@ class Image < ActiveRecord::Base
     end
     self.assisted = assisted
   end
-  
+
   # Pads the image with a given color so it gets the proper aspect ratio, then recomputes versions.
   #
   # This restores the original image and the prefull image to their original files post-crop, so
@@ -289,7 +289,7 @@ private
     end
     true
   end
-  
+
   def check_kind_change
     if kind_changed? && !@single_pass
       @single_pass = true
@@ -314,7 +314,7 @@ private
       0
     end
   end
-  
+
   def wrapped_image_tweak(&block)
     if Figaro.env.s3_enabled.to_bool
       # Define image manipulations (do it first to avoid many thumbnail re-generations)

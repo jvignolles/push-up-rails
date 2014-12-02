@@ -20,7 +20,7 @@ class Banner < ActiveRecord::Base
   #=== Scopes
   scope :active,       -> { where(active: true) }
   scope :alphabetical, -> { order("banners.name, banners.id") }
-  scope :adm_for_text, ->(opts) { 
+  scope :adm_for_text, ->(opts) {
     words = opts && opts.scan(/\w+/)
     next where(nil) if words.blank?
     conditions = ["true"]

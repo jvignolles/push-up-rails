@@ -4,7 +4,7 @@ class TeamMember < ActiveRecord::Base
 
   IMAGE_KINDS = {
     :profile => "Profil",
-  }.freeze
+  }
 
   acts_as_clean_html :description
   reorderable
