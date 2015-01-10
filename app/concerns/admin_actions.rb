@@ -190,7 +190,7 @@ protected
   end
 
   def strong_params
-    %(active name)
+    %w(active name)
   end
 
   def init_view

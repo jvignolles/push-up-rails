@@ -33,6 +33,9 @@ class Admin::EditorialsController < Admin::BaseController
 
 private
   def strong_params
-    %w(active in_lateral_menu name kind text1 text2 text3 seo_title seo_h1 seo_description seo_keywords)
+    %w(
+      active in_lateral_menu name kind text1 text2 text3
+      seo_title seo_h1 seo_description seo_keywords
+    )
   end
 end
