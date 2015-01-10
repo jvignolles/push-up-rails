@@ -40,7 +40,7 @@ class Admin::ImagesController < Admin::BaseController
     data = {}
     if params[:data].present?
       data = JSON.parse(params[:data]).symbolize_keys
-      img = data[:image]
+      img = data[:image].symbolize_keys
     else
       img = params[:image]
     end
@@ -168,7 +168,7 @@ private
   end
 
   def strong_params
-    params.require(:image).permit(%(imageable kind legend zoomable assisted img))
+    params.require(:image).permit(%w(imageable kind legend zoomable assisted img))
   end
 
   helper_method :parent_url
